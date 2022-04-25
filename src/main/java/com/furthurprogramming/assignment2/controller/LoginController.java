@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.furthurprogramming.assignment2.model.AccountDAO;
 import com.furthurprogramming.assignment2.util.DBUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -149,19 +150,12 @@ public class LoginController {
 
     private boolean checkAuthentication(String username, String password) {
 
-        boolean result = false;
-
-        try {
-            ResultSet rs = DBUtil.dbExecuteQuery("SELECT * FROM accounts WHERE username='%s' AND password='%s'".formatted(username, password));
-            if (rs != null && rs.next())
-                result = true;
-
-            DBUtil.dbDisconnect();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            DBUtil.dbDisconnect();
+        if (AccountDAO.isAccountExists(username, password)){
+            logIn();
+            return true;
         }
-        return result;
+
+        return false;
     }
 
     private void signUp() {
