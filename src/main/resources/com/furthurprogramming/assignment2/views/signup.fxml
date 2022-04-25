@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.furthurprogramming.assignment2.controller.SignUpController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+              <AnchorPane minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="394.0">
+                  <children>
+                      <Label alignment="CENTER" layoutX="124.0" layoutY="29.0" prefHeight="46.0" prefWidth="106.0" text="Sign up Page" textAlignment="CENTER" textFill="#f50e0e">
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                      </Label>
+                      <Label layoutX="27.0" layoutY="97.0" text="Username:" />
+                      <Label layoutX="28.0" layoutY="139.0" text="Fistname:" />
+                      <Label layoutX="27.0" layoutY="183.0" prefHeight="17.0" prefWidth="60.0" text="Lastname:" />
+                      <Label layoutX="27.0" layoutY="228.0" prefHeight="17.0" prefWidth="60.0" text="Password:" />
+                      <TextField alignment="CENTER" layoutX="97.0" layoutY="93.0" promptText="username" />
+                      <TextField alignment="CENTER" layoutX="97.0" layoutY="135.0" promptText="firstname" />
+                      <TextField alignment="CENTER" layoutX="97.0" layoutY="224.0" promptText="password" />
+                      <TextField alignment="CENTER" layoutX="97.0" layoutY="179.0" promptText="lastname" />
+                      <Button alignment="CENTER" layoutX="97.0" layoutY="282.0" mnemonicParsing="false" text="create user" textFill="#e81212" />
+                      <Button alignment="CENTER" layoutX="203.0" layoutY="283.0" mnemonicParsing="false" text="close" textFill="#0e0bd0" />
+                      <Text fill="#05f50d" layoutX="110.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have registered" textAlignment="CENTER" underline="true">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                      </Text>
+                  </children>
+              </AnchorPane>
+         </children></VBox>
+    </children>
+</HBox>
