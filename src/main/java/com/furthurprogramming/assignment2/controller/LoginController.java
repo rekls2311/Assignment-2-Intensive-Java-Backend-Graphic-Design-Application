@@ -1,7 +1,10 @@
 package com.furthurprogramming.assignment2.controller;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import com.furthurprogramming.assignment2.util.DBUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -145,10 +148,20 @@ public class LoginController {
     }
 
     private boolean checkAuthentication(String username, String password) {
-        if (username.equals("admin") && password.equals("12345"))
-            return true;
 
-        return false;
+        boolean result = false;
+
+        try {
+            ResultSet rs = DBUtil.dbExecuteQuery("SELECT * FROM accounts WHERE username='%s' AND password='%s'".formatted(username, password));
+            if (rs != null && rs.next())
+                result = true;
+
+            DBUtil.dbDisconnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            DBUtil.dbDisconnect();
+        }
+        return result;
     }
 
     private void signUp() {

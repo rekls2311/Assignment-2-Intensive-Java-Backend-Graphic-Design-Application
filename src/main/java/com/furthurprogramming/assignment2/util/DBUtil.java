@@ -12,7 +12,7 @@ public class DBUtil {
     //Connection
     private static Connection conn = null;
     //Connection String
-    private static final String connStr = "jdbc:sqlite:" + Main.class.getResource("database/SQLite");
+    private static final String connStr = "jdbc:sqlite:" + Main.class.getResource("database/database.sqlite");
     //Connect to DB
     public static boolean dbConnect(){
         //Establish the Oracle Connection using Connection String

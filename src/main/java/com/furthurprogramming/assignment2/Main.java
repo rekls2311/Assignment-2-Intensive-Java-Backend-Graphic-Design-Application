@@ -49,15 +49,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
         if (DBUtil.dbConnect() && DBUtil.dbDisconnect()) {
-            ResultSet rs = DBUtil.dbExecuteQuery("SELECT * FROM accounts");
-            while(true){
-                assert rs != null;
-                if (!rs.next()) break;
-                String un = rs.getString("username");
-                System.out.println(un);
-            } DBUtil.dbDisconnect();
             launch();
-
         }
         else {
             System.out.println("Can't connect to database!");
