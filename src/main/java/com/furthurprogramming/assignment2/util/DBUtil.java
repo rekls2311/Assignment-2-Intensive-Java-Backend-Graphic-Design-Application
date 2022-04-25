@@ -1,5 +1,7 @@
 package com.furthurprogramming.assignment2.util;
 
+import com.furthurprogramming.assignment2.Main;
+
 import javax.sql.rowset.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +12,7 @@ public class DBUtil {
     //Connection
     private static Connection conn = null;
     //Connection String
-    private static final String connStr = "jdbc:sqlite:/Users/longnguyen/Desktop/Java/Assignment2/src/main/resources/database/SQLite";
+    private static final String connStr = "jdbc:sqlite:" + Main.class.getResource("database/SQLite");
     //Connect to DB
     public static boolean dbConnect(){
         //Establish the Oracle Connection using Connection String
