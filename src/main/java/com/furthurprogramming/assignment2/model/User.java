@@ -1,17 +1,18 @@
 package com.furthurprogramming.assignment2.model;
 import javafx.beans.property.*;
+import javafx.scene.image.Image;
 
 public class User {
     private String firstName;
     private String lastName;
     private String username;
-    private String profilePicturePath;
+    private Image profilePicture;
 
-    public User(String firstName, String lastName, String profilePicturePath, String username)
+    public User(String firstName, String lastName, Image profilePicture, String username)
     {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.profilePicturePath = profilePicturePath;
+        this.profilePicture = profilePicture;
         this.username = username;
     }
 
@@ -25,5 +26,9 @@ public class User {
 
     public String getUsername() {
         return username;
+    }
+
+    public Image getProfilePicture() {
+        return profilePicture;
     }
 }

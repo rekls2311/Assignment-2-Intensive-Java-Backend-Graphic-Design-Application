@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46480ff4-1397-4700-927d-1184f26d94e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_ea_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_ea_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_ea_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_ea_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/ImageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/database/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/database/database.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/signup.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/welcome.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

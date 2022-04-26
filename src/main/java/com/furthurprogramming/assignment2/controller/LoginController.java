@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.furthurprogramming.assignment2.model.AccountDAO;
+import com.furthurprogramming.assignment2.model.UserDAO;
 import com.furthurprogramming.assignment2.util.DBUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -44,6 +46,9 @@ public class LoginController {
     @FXML
     Label labelLoginMessage;
 
+    @FXML
+    ImageView imageViewProfilePicture;
+
     /////////////////////////////////////////////////////////////////////
     // Normal fields
     /////////////////////////////////////////////////////////////////////
@@ -59,15 +64,27 @@ public class LoginController {
         TogglePassword(checkboxTogglePassword.isSelected());
         toggleLableLoginMessage(false);
 
-        checkboxTogglePassword
-                .setOnMouseReleased(mouseEvent -> checkboxTogglePasswordOnMouseReleaseHandler(mouseEvent));
-
-        passwordPassword.setOnKeyTyped(key -> passwordPasswordOnKeyTypedHandler(key));
-
-        textPassword.setOnKeyTyped(key -> textPasswordOnKeyTypedHandler(key));
+        checkboxTogglePassword.setOnMouseReleased(this::checkboxTogglePasswordOnMouseReleaseHandler);
+        passwordPassword.setOnKeyTyped(this::passwordPasswordOnKeyTypedHandler);
+        textPassword.setOnKeyTyped(this::textPasswordOnKeyTypedHandler);
         buttonClose.setOnAction(action -> closeLoginWindow());
-        buttonLogin.setOnAction(action -> loginButtonOnActionHandler(action));
-        buttonCreateNewUser.setOnAction(action -> buttonCreateNewUserOnActionHandler(action));
+        buttonLogin.setOnAction(this::loginButtonOnActionHandler);
+        buttonCreateNewUser.setOnAction(this::buttonCreateNewUserOnActionHandler);
+        textUsername.setOnKeyTyped(this::textUsernameOnKeyTypedHandler);
+    }
+
+    private void textUsernameOnKeyTypedHandler(KeyEvent e) {
+        String un = textUsername.getText();
+        var user = UserDAO.searchUser(un);
+
+        if (user != null && user.getProfilePicture() != null)
+        {
+            imageViewProfilePicture.setImage(user.getProfilePicture());
+        }
+        else
+        {
+            imageViewProfilePicture.setImage(null);
+        }
     }
 
     /////////////////////////////////////////////////////////////////////
@@ -82,12 +99,9 @@ public class LoginController {
             return;
         }
 
-        if (!checkAuthentication(un, pw)) {
+        if (!Main.LogIn(un, pw)) {
             toggleLableLoginMessage(true, "Incorrect");
-            return;
         }
-
-        logIn();
     }
 
     private void textPasswordOnKeyTypedHandler(KeyEvent keyEvent) {
@@ -112,16 +126,7 @@ public class LoginController {
     /////////////////////////////////////////////////////////////////////
     // private methods
     /////////////////////////////////////////////////////////////////////
-    private void logIn() {
-        if (textUsername.getText().isBlank() || passwordPassword.getText().isBlank())
-            return;
 
-        try {
-            Main.setRoot("welcome");
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     private void TogglePassword(boolean show) {
         passwordPassword.setManaged(!show);
@@ -146,16 +151,6 @@ public class LoginController {
     private void closeLoginWindow() {
         Stage stage = (Stage) buttonClose.getScene().getWindow();
         stage.close();
-    }
-
-    private boolean checkAuthentication(String username, String password) {
-
-        if (AccountDAO.isAccountExists(username, password)){
-            logIn();
-            return true;
-        }
-
-        return false;
     }
 
     private void signUp() {

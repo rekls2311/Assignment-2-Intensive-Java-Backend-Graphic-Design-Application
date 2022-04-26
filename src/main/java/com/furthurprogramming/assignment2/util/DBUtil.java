@@ -1,27 +1,31 @@
 package com.furthurprogramming.assignment2.util;
 
 import com.furthurprogramming.assignment2.Main;
-
 import java.sql.*;
 
 public class DBUtil {
+    private static Connection conn;
     //Connection String
     private static final String connStr = "jdbc:sqlite:" + Main.class.getResource("database/database.sqlite");
     //Connect to DB
-    public static Connection connect(){
+    public static void connect(){
         //Establish the Oracle Connection using Connection String
         try {
-            Connection conn = DriverManager.getConnection(connStr);
+            conn = DriverManager.getConnection(connStr);
             System.out.println("Connection established!");
-            return conn;
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console" + e);
             e.printStackTrace();
-            return null;
         }
     }
+
+    public static Connection getConnection()
+    {
+        return conn;
+    }
+
     //Close Connection
-    public static boolean disconnect(Connection conn) {
+    public static boolean disconnect() {
         try {
             if (conn != null && !conn.isClosed()) {
                 conn.close();
@@ -35,13 +39,11 @@ public class DBUtil {
         return false;
     }
 
-    // Execute query
+    // Execute query, remember to close conn
     public static ResultSet executeQuery(String query) {
         ResultSet result = null;
         try {
-            try (var conn = connect()){
                 result = conn.createStatement().executeQuery(query);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -50,8 +52,8 @@ public class DBUtil {
     }
 
     public static boolean update(String sql) {
-        try (Connection conn = connect();
-             Statement statement = conn.createStatement()) {
+        try {
+             Statement statement = conn.createStatement();
             statement.executeUpdate(sql);
             return true;
         } catch (SQLException e) {
