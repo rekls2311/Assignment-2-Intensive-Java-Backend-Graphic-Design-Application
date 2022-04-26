@@ -5,6 +5,7 @@ import com.furthurprogramming.assignment2.util.DBUtil;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -28,6 +29,7 @@ public class Main extends Application {
 
     public static void setRoot(String fxml) throws IOException {
         var newFxml = loadFXML(fxml);
+
         scene.setRoot(newFxml);
     }
 
@@ -49,7 +51,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
         if (DBUtil.connect() != null) {
-            // DEMO: UserDAO.createUser("admin", "12345", "admin cha", "admin con", null);
+              //UserDAO.createUser("admin", "12345", "admin cha", "admin con", null);
             launch();
         }
         else {
