@@ -3,6 +3,7 @@ package com.furthurprogramming.assignment2.service.element;
 import com.furthurprogramming.assignment2.controller.element.CanvasRectanglePropertyController;
 import javafx.beans.Observable;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventDispatchChain;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
@@ -26,6 +27,10 @@ public class CanvasRectangle extends CanvasShape {
         var rect = new Rectangle(v1, v2);
         shape = rect;
 
+        shape.setOnMouseClicked((mouseEvent -> {
+            System.out.println(mouseEvent.getX() + " " + mouseEvent.getY());
+        }));
+
         setAnchor(new Point2D(rect.getX() + rect.getWidth() / 2, rect.getY() + rect.getHeight() / 2));
 
         viewController.sliderAngle.valueProperty().addListener(this::sliderAngleValueChangedHandler);
@@ -33,17 +38,15 @@ public class CanvasRectangle extends CanvasShape {
 
     private void sliderAngleValueChangedHandler(Observable observable, Number oldVal, Number newVal) {
         setRotation((double)newVal);
-        System.out.println(newVal);
     }
 
 
     @Override
     public void drawSelf(GraphicsContext gc) {
-
         // Cast to rectangle
         Rectangle rect = (Rectangle)shape;
 
-        gc.setFill(Color.BLACK);
+        gc.setFill(Color.DARKSEAGREEN);
         gc.fillRect(rect.getX(),
                 rect.getY(),
                 rect.getWidth(),

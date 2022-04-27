@@ -2,7 +2,10 @@ package com.furthurprogramming.assignment2.service.element;
 
 import com.furthurprogramming.assignment2.service.Transform2D;
 import com.furthurprogramming.assignment2.util.JavaFXUtil;
+import javafx.event.EventDispatchChain;
+import javafx.event.EventTarget;
 import javafx.geometry.Point2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
@@ -24,6 +27,8 @@ public abstract class CanvasElement {
     /////////////////////////////////////////////////////////////////////
     // This is overridden from subclasses to draw itself
     public abstract void drawSelf(GraphicsContext gc);
+    public abstract Node getNodeObject();
+
 
     public CanvasElement(Pane propertyPane, String propertyViewName, Object propertyViewController) throws IOException {
         this.propertyPane = propertyPane;
@@ -31,6 +36,8 @@ public abstract class CanvasElement {
         this.propertyViewController = propertyViewController;
         transform = new Transform2D();
     }
+
+
 
     public Object getPropertyViewController()
     {
@@ -98,6 +105,7 @@ public abstract class CanvasElement {
     public double getY() {return transform.getTy();}
     public double getRotation() {return transform.getRotationDegree();}
     public Point2D getScale() {return transform.getScale();}
+
 
     /////////////////////////////////////////////////////////////////////
     // Private methods

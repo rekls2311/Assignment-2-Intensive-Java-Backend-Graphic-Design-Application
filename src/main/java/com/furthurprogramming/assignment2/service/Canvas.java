@@ -5,6 +5,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
+import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -29,6 +30,8 @@ public class Canvas extends AnimationTimer {
 
         // Create element list
         elementList = new ArrayList<>();
+
+        this.start();
     }
 
     /////////////////////////////////////////////////////////////////////
@@ -56,12 +59,13 @@ public class Canvas extends AnimationTimer {
     public void addElement(CanvasElement elem)
     {
         elementList.add(elem);
+        var nodeObject = elem.getNodeObject();
+        rootPane.getChildren().add(nodeObject);
     }
 
 
     @Override
     public void handle(long l) {
-        System.out.println(l);
         //draw();
     }
 
@@ -72,6 +76,7 @@ public class Canvas extends AnimationTimer {
     private void draw()
     {
         var gc = canvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         for(var elem : elementList){
             elem.draw(gc);
         }
