@@ -13,4 +13,10 @@ public class JavaFXUtil {
         return fxmlLoader.load();
     }
 
+
+    public static Parent loadFXML(String fxml, Object controller) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/" + fxml + ".fxml"));
+        fxmlLoader.setController(controller);
+        return fxmlLoader.load();
+    }
 }

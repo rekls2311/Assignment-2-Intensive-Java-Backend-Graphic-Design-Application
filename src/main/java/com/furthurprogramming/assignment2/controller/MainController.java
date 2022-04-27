@@ -3,17 +3,14 @@ package com.furthurprogramming.assignment2.controller;
 import java.io.IOException;
 
 import com.furthurprogramming.assignment2.service.Canvas;
-import com.furthurprogramming.assignment2.service.element.ElementRectangle;
-import com.furthurprogramming.assignment2.util.JavaFXUtil;
+import com.furthurprogramming.assignment2.service.element.CanvasRectangle;
 import javafx.fxml.FXML;
 
 import com.furthurprogramming.assignment2.Main;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.image.ImageView;
+import javafx.geometry.Point2D;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 
 // Second scene controller
 public class MainController {
@@ -40,23 +37,22 @@ public class MainController {
     private void initialize() throws IOException {
         Main.getStage().setResizable(true);
 
-
         mainCanvas = new Canvas(paneCanvas, 400, 400);
         mainCanvas.setBackgroundColor(Color.WHITE);
-
-
-
-        ElementRectangle rect = null;
+        CanvasRectangle rect = null;
         try {
-            rect = new ElementRectangle(anchorPaneProperties,100, 100);
-            rect.setPosition(40, 40);
-            rect.select();
+            rect = new CanvasRectangle(anchorPaneProperties,100, 100);
             mainCanvas.addElement(rect);
+            rect.setY(10).setX(40);
+            rect.setRotation(30);
+            rect.select();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+    }
 
-        mainCanvas.draw();
+    public MainController()
+    {
     }
 
     /////////////////////////////////////////////////////////////////////
@@ -66,6 +62,7 @@ public class MainController {
     /////////////////////////////////////////////////////////////////////
     // public methods
     /////////////////////////////////////////////////////////////////////
+
 
     /////////////////////////////////////////////////////////////////////
     // private methods

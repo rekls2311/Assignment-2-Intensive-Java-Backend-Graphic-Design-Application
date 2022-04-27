@@ -1,20 +1,14 @@
 package com.furthurprogramming.assignment2.service;
 
 import com.furthurprogramming.assignment2.service.element.CanvasElement;
-import com.furthurprogramming.assignment2.service.element.ElementRectangle;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
+import javafx.animation.AnimationTimer;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.ArcType;
-import javafx.scene.shape.Rectangle;
+
 import java.util.List;
 import java.util.ArrayList;
 
-import java.io.IOException;
-
-public class Canvas {
+public class Canvas extends AnimationTimer {
 
     Pane rootPane;
     javafx.scene.canvas.Canvas canvas;
@@ -64,16 +58,22 @@ public class Canvas {
         elementList.add(elem);
     }
 
-    public void draw()
-    {
-        var gc = canvas.getGraphicsContext2D();
-        for(var elem : elementList){
-            elem.draw(gc);
-        }
+
+    @Override
+    public void handle(long l) {
+        System.out.println(l);
+        //draw();
     }
 
     /////////////////////////////////////////////////////////////////////
     // private methods
     /////////////////////////////////////////////////////////////////////
 
+    private void draw()
+    {
+        var gc = canvas.getGraphicsContext2D();
+        for(var elem : elementList){
+            elem.draw(gc);
+        }
+    }
 }

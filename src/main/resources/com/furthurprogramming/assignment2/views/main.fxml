@@ -27,7 +27,7 @@
                <content>
                   <Pane fx:id="paneCanvas" prefHeight="200.0" prefWidth="200.0" />
                </content></ScrollPane>
-          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="319.0" />
+          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" prefHeight="291.0" prefWidth="319.0" />
         </items>
       </SplitPane>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="1278.0" />
