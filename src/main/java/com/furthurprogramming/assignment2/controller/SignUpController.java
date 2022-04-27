@@ -85,6 +85,9 @@ public class SignUpController {
     private void buttonOnImageActionHandler(){
         var file = chooseImageFile();
 
+        if (file == null)
+            return;
+
         profileImagePath = file.getAbsolutePath();
 
         Image img = new Image(file.getAbsolutePath());
@@ -117,6 +120,9 @@ public class SignUpController {
             promptUser("Please fill out all the form");
             return;
         }
+
+        if (profileImagePath == null)
+            profileImagePath = imageviewProfileimage.getImage().getUrl();
 
         if (UserDAO.createUser(un, password,firstname,lastname, profileImagePath))
         {

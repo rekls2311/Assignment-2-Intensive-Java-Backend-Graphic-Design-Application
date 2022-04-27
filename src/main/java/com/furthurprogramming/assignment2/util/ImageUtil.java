@@ -8,9 +8,15 @@ import javax.imageio.ImageIO;
 
 public class ImageUtil {
     public static byte[] ImageToByteArray(String imgPath) throws IOException {
+
+        if (imgPath == null)
+            return null;
+
+        imgPath = imgPath.replace("file:/", "");
+        ImageIO.setUseCache(false);
         BufferedImage bImage = ImageIO.read(new File(imgPath));
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ImageIO.write(bImage, "jpg", bos );
+        ImageIO.write(bImage, "png", bos ); // png extension is a must.
         return bos.toByteArray();
     }
 
