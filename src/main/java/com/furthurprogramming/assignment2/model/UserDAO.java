@@ -75,4 +75,6 @@ public class UserDAO {
         return DBUtil.update("INSERT INTO users(firstname,lastname,username) VALUES('%s','%s','%s')"
                 .formatted(firstName, lastName, username));
     }
+
+
 }

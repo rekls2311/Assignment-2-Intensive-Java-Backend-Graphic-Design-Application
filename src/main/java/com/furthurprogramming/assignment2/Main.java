@@ -21,6 +21,17 @@ public class Main extends Application {
     private static Scene scene;
     private static Stage stage;
 
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        Main.stage = stage;
+
+        Parent fxml = loadFXML("main");
+        scene = new Scene(fxml);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public static Stage getStage() {
         return stage;
     }
@@ -44,7 +55,7 @@ public class Main extends Application {
     {
         if (checkAuthentication(un, password)) {
             try {
-                setRoot("welcome");
+                setRoot("main");
                 return true;
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,16 +69,6 @@ public class Main extends Application {
         return AccountDAO.isAccountExists(username, password);
     }
 
-
-    @Override
-    public void start(Stage stage) throws IOException {
-        Main.stage = stage;
-
-        Parent fxml = loadFXML("login");
-        scene = new Scene(fxml);
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
     public static void main(String[] args) throws SQLException {

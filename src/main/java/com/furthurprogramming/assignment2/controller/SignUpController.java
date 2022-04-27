@@ -6,6 +6,7 @@ import java.io.IOException;
 import com.furthurprogramming.assignment2.model.UserDAO;
 import javafx.fxml.FXML;
 import com.furthurprogramming.assignment2.Main;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -19,7 +20,7 @@ import javafx.stage.FileChooser;
 // Scene controller
 public class SignUpController {
 
-    //////////////////////  ///////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
     // FXML fields
     /////////////////////////////////////////////////////////////////////
     @FXML
@@ -135,6 +136,9 @@ public class SignUpController {
         labelPromptMessage.setText(message);
         labelPromptMessage.setVisible(true);
         labelPromptMessage.setTextFill(Paint.valueOf("rgb(%s)".formatted(rgb)));
+
+        var canvas = new Canvas();
+
     }
     private void promptUser(String message){
         promptUser(message, "0,0,0");
