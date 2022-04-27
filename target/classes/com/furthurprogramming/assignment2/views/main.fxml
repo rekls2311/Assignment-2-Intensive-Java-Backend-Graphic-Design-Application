@@ -23,16 +23,11 @@
       <SplitPane dividerPositions="0.0477, 0.7887" prefHeight="160.0" prefWidth="200.0">
         <items>
           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="577.0" prefWidth="68.0" />
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="708.0" style="-fx-background-color: rgb(200, 200 ,200);">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Pane fx:id="paneCanvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="600.0" style="-fx-background-color: #AAAAAA;" />
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="319.0" />
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <Pane fx:id="paneCanvas" prefHeight="200.0" prefWidth="200.0" />
+               </content></ScrollPane>
+          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="319.0" />
         </items>
       </SplitPane>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="1278.0" />

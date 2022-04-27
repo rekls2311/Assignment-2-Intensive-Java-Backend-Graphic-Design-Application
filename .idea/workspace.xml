@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46480ff4-1397-4700-927d-1184f26d94e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/DemoProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/ElementRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/JavaFXUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/rectangle_property.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -64,6 +70,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\resources\com\furthurprogramming\assignment2\views\element_property" />
+      <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\java\com\furthurprogramming\assignment2\controller" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Assignment2" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-18.0.1" />

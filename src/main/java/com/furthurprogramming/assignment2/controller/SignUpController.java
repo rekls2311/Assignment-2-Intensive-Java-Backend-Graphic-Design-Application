@@ -14,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 // Scene controller
@@ -127,7 +126,7 @@ public class SignUpController {
 
         if (UserDAO.createUser(un, password,firstname,lastname, profileImagePath))
         {
-            Main.LogIn(un, password);
+            Main.logIn(un, password);
         }
     }
 
