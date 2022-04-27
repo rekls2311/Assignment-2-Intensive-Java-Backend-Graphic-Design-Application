@@ -38,17 +38,8 @@ public class MainController {
         Main.getStage().setResizable(true);
 
         mainCanvas = new Canvas(paneCanvas, 400, 400);
-        mainCanvas.setBackgroundColor(Color.WHITE);
         CanvasRectangle rect = null;
-        try {
-            rect = new CanvasRectangle(anchorPaneProperties,100, 100);
-            mainCanvas.addElement(rect);
-            rect.setY(10).setX(40);
-            rect.setRotation(30);
-            rect.select();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        mainCanvas.addElement(new CanvasRectangle(anchorPaneProperties,200, 100));
     }
 
     public MainController()

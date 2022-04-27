@@ -17,41 +17,26 @@ import java.io.IOException;
 
 public class CanvasRectangle extends CanvasShape {
 
+    protected Rectangle rectangle;
     CanvasRectanglePropertyController viewController;
 
-    public CanvasRectangle(Pane propertyPane, double v1, double v2) throws IOException {
-        super(propertyPane, "rectangle_property", new CanvasRectanglePropertyController());
+    public CanvasRectangle(Pane propertyPane, double v1, double v2)  {
+        super(propertyPane,
+                "rectangle_property",
+                new CanvasRectanglePropertyController(),
+                new Rectangle(v1, v2));
 
         viewController = (CanvasRectanglePropertyController) getPropertyViewController();
 
-        var rect = new Rectangle(v1, v2);
-        shape = rect;
-
-        shape.setOnMouseClicked((mouseEvent -> {
-            System.out.println(mouseEvent.getX() + " " + mouseEvent.getY());
-        }));
-
-        setAnchor(new Point2D(rect.getX() + rect.getWidth() / 2, rect.getY() + rect.getHeight() / 2));
+        rectangle = (Rectangle)getNodeObject();
 
         viewController.sliderAngle.valueProperty().addListener(this::sliderAngleValueChangedHandler);
+
     }
+
+
 
     private void sliderAngleValueChangedHandler(Observable observable, Number oldVal, Number newVal) {
         setRotation((double)newVal);
-    }
-
-
-    @Override
-    public void drawSelf(GraphicsContext gc) {
-        // Cast to rectangle
-        Rectangle rect = (Rectangle)shape;
-
-        gc.setFill(Color.DARKSEAGREEN);
-        gc.fillRect(rect.getX(),
-                rect.getY(),
-                rect.getWidth(),
-                rect.getHeight());
-        gc.setFill(Color.GREEN);
-        gc.setStroke(Color.BLUE);
     }
 }

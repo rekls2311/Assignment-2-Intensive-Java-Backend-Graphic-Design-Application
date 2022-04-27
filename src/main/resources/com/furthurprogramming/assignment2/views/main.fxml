@@ -25,7 +25,7 @@
           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="577.0" prefWidth="68.0" />
             <ScrollPane prefHeight="200.0" prefWidth="200.0">
                <content>
-                  <Pane fx:id="paneCanvas" prefHeight="200.0" prefWidth="200.0" />
+                  <Pane fx:id="paneCanvas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" />
                </content></ScrollPane>
           <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" prefHeight="291.0" prefWidth="319.0" />
         </items>

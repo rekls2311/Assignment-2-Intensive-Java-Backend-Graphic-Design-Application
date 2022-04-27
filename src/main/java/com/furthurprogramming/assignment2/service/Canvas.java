@@ -1,7 +1,9 @@
 package com.furthurprogramming.assignment2.service;
 
 import com.furthurprogramming.assignment2.service.element.CanvasElement;
+import com.furthurprogramming.assignment2.service.element.DragController;
 import javafx.animation.AnimationTimer;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
@@ -9,12 +11,13 @@ import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Canvas extends AnimationTimer {
+public class Canvas {
 
     Pane rootPane;
-    javafx.scene.canvas.Canvas canvas;
 
     List<CanvasElement> elementList;
+
+    DragController dragController;
 
     public Canvas(Pane root , int width, int height)
     {
@@ -24,14 +27,10 @@ public class Canvas extends AnimationTimer {
         rootPane.setMinSize(width, height);
         rootPane.setPrefSize(width, height);
 
-        // Create canvas
-        canvas = new javafx.scene.canvas.Canvas(width, height);
-        root.getChildren().add(canvas);
-
         // Create element list
         elementList = new ArrayList<>();
 
-        this.start();
+        dragController = new DragController(rootPane, MouseButton.SECONDARY);
     }
 
     /////////////////////////////////////////////////////////////////////
@@ -46,9 +45,6 @@ public class Canvas extends AnimationTimer {
         rootPane.setMaxSize(newWidth, newHeight);
         rootPane.setMinSize(newWidth, newHeight);
         rootPane.setPrefSize(newWidth, newHeight);
-
-        canvas.setWidth(newWidth);
-        canvas.setHeight(newHeight);
     }
 
     public void setBackgroundColor(Color color)
@@ -63,22 +59,8 @@ public class Canvas extends AnimationTimer {
         rootPane.getChildren().add(nodeObject);
     }
 
-
-    @Override
-    public void handle(long l) {
-        //draw();
-    }
-
     /////////////////////////////////////////////////////////////////////
     // private methods
     /////////////////////////////////////////////////////////////////////
 
-    private void draw()
-    {
-        var gc = canvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        for(var elem : elementList){
-            elem.draw(gc);
-        }
-    }
 }
