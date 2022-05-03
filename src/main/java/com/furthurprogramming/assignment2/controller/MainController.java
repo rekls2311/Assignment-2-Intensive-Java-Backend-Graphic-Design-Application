@@ -38,7 +38,7 @@ public class MainController {
         Main.getStage().setResizable(true);
 
         mainCanvas = new Canvas(paneCanvas, 400, 400);
-        CanvasRectangle rect = null;
+
         mainCanvas.addElement(new CanvasRectangle(anchorPaneProperties,200, 100));
     }
 
