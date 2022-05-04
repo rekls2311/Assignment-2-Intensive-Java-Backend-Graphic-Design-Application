@@ -33,7 +33,6 @@ public class CanvasRectangle extends CanvasShape {
         rectangle = (Rectangle)getNodeObject();
 
         viewController.sliderAngle.valueProperty().addListener(this::sliderAngleValueChangedHandler);
-
     }
 
     private void sliderAngleValueChangedHandler(Observable observable, Number oldVal, Number newVal) {
