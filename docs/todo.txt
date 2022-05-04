@@ -1,5 +1,0 @@
-1. Left panel
-2. Property panel
-3. Canvas zoom
-4. Canvas export
-5. Login info
