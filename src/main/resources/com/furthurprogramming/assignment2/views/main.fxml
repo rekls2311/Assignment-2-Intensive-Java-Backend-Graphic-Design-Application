@@ -20,14 +20,18 @@
             </ToolBar>
          </children>
       </AnchorPane>
-      <SplitPane dividerPositions="0.0477, 0.7887" prefHeight="160.0" prefWidth="200.0">
+      <SplitPane dividerPositions="0.08897243107769423, 0.8082706766917294" prefHeight="160.0" prefWidth="200.0">
         <items>
-          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="577.0" prefWidth="68.0" />
-            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="577.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="buttonAddRectangle" layoutX="13.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Rectangle" textAlignment="CENTER" />
+                  <Button fx:id="buttonAddCircle" layoutX="13.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Circle" textAlignment="CENTER" />
+               </children></AnchorPane>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.81" pannable="true" prefHeight="200.0" prefWidth="200.0" vvalue="0.61">
                <content>
-                  <Pane fx:id="paneCanvas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" />
+                  <StackPane fx:id="paneCanvas" prefHeight="150.0" prefWidth="200.0" />
                </content></ScrollPane>
-          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" prefHeight="291.0" prefWidth="319.0" />
+          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" />
         </items>
       </SplitPane>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="1278.0" />

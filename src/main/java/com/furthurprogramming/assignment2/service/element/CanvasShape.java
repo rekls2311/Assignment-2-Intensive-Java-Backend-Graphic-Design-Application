@@ -2,10 +2,16 @@ package com.furthurprogramming.assignment2.service.element;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.event.Event;
 import javafx.geometry.Point2D;
 import javafx.geometry.Point3D;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 import java.io.IOException;
@@ -21,12 +27,30 @@ public abstract class CanvasShape extends CanvasElement{
 
         dragController = new DragController(shape);
 
-        this.shape.setOnMousePressed(mouseEvent -> {select();});
+        createHandlers();
     }
+
+    private void createHandlers(){
+        this.shape.setOnMousePressed(this::shapeOnMousePressedHandler);
+        this.shape.setOnMouseClicked(this::shapeOnMouseClickedHandler);
+    }
+
+    private void shapeOnMousePressedHandler(MouseEvent e){
+        IsSelected.setValue(true);
+    }
+    private void shapeOnMouseClickedHandler(MouseEvent e){
+
+    }
+
 
     @Override
     public Node getNodeObject(){
         return shape;
+    }
+
+    @Override
+    public boolean containsPoint(Point2D point) {
+        return shape.contains(point);
     }
 
     public CanvasShape setRotation(double degree)
@@ -59,8 +83,8 @@ public abstract class CanvasShape extends CanvasElement{
 
     }
 
-    public void setForegroundColor(){
-
+    public void setForegroundColor(Color color){
+        shape.setFill(color);
     }
 
     public void setBorder() {

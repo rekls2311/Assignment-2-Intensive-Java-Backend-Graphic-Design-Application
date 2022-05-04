@@ -1,9 +1,13 @@
 package com.furthurprogramming.assignment2.service;
 
 import com.furthurprogramming.assignment2.service.element.CanvasElement;
+import com.furthurprogramming.assignment2.service.element.CanvasShape;
 import com.furthurprogramming.assignment2.service.element.DragController;
 import javafx.animation.AnimationTimer;
+import javafx.beans.Observable;
+import javafx.geometry.Point2D;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
@@ -15,6 +19,8 @@ public class Canvas {
 
     Pane rootPane;
 
+    Pane canvasPane;
+
     List<CanvasElement> elementList;
 
     DragController dragController;
@@ -23,40 +29,76 @@ public class Canvas {
     {
         // Set panels
         this.rootPane = root;
-        rootPane.setMaxSize(width, height);
-        rootPane.setMinSize(width, height);
-        rootPane.setPrefSize(width, height);
+
+        canvasPane = new Pane();
+        this.rootPane.getChildren().add(canvasPane);
+
+        canvasPane.setMaxSize(width, height);
+        canvasPane.setMinSize(width, height);
+        canvasPane.setPrefSize(width, height);
+
 
         // Create element list
         elementList = new ArrayList<>();
 
-        dragController = new DragController(rootPane, MouseButton.SECONDARY);
+        createHandlers();
+    }
+
+    void createHandlers()
+    {
+        canvasPane.setOnMousePressed(this::canvasPaneOnMousePressedHandler);
     }
 
     /////////////////////////////////////////////////////////////////////
     // Event handler
     ////////////////////////////////////////////////////////////////////
 
+    private void canvasPaneOnMousePressedHandler(MouseEvent e)
+    {
+        for(var element : elementList){
+            if (!element.containsPoint(new Point2D(
+                    e.getX() - element.getNodeObject().getLayoutX(),
+                    e.getY() - element.getNodeObject().getLayoutY())))
+                element.IsSelected.setValue(false);
+        }
+    }
+    
+    private void elementIsSelectedListener(Observable observable, boolean oldVal, boolean newVal) {
+        if (newVal) {
+            for (var element : elementList) {
+                if (observable != element.IsSelected)
+                    element.IsSelected.setValue(false);
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////////////////
     // public methods
     /////////////////////////////////////////////////////////////////////
     public void resize(int newWidth, int newHeight)
     {
-        rootPane.setMaxSize(newWidth, newHeight);
-        rootPane.setMinSize(newWidth, newHeight);
-        rootPane.setPrefSize(newWidth, newHeight);
+        canvasPane.setMaxSize(newWidth, newHeight);
+        canvasPane.setMinSize(newWidth, newHeight);
+        canvasPane.setPrefSize(newWidth, newHeight);
     }
 
     public void setBackgroundColor(Color color)
     {
-        rootPane.setStyle("-fx-background-color: #" + color.toString().substring(2));
+        canvasPane.setStyle("-fx-background-color: #" + color.toString().substring(2));
     }
 
     public void addElement(CanvasElement elem)
     {
-        elementList.add(elem);
+        elem.setCanvas(this);
+        elem.IsSelected.addListener(this::elementIsSelectedListener);
+
         var nodeObject = elem.getNodeObject();
-        rootPane.getChildren().add(nodeObject);
+        canvasPane.getChildren().add(nodeObject);
+
+        nodeObject.setLayoutX(canvasPane.getWidth() / 2 - nodeObject.getLayoutBounds().getCenterX());
+        nodeObject.setLayoutY(canvasPane.getHeight() / 2 - nodeObject.getLayoutBounds().getCenterY());
+
+        elementList.add(elem);
     }
 
     /////////////////////////////////////////////////////////////////////

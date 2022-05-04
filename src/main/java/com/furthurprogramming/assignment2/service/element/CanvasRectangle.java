@@ -18,6 +18,8 @@ import java.io.IOException;
 public class CanvasRectangle extends CanvasShape {
 
     protected Rectangle rectangle;
+
+
     CanvasRectanglePropertyController viewController;
 
     public CanvasRectangle(Pane propertyPane, double v1, double v2)  {
@@ -33,8 +35,6 @@ public class CanvasRectangle extends CanvasShape {
         viewController.sliderAngle.valueProperty().addListener(this::sliderAngleValueChangedHandler);
 
     }
-
-
 
     private void sliderAngleValueChangedHandler(Observable observable, Number oldVal, Number newVal) {
         setRotation((double)newVal);

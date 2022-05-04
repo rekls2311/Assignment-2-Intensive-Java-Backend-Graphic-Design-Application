@@ -44,13 +44,15 @@ public class DragController {
             }
         };
         updatePositionOnDrag = event -> {
-            if (cycleStatus != INACTIVE) {
-                target.setTranslateX(event.getSceneX() - mouseOriginal.getX());
-                target.setTranslateY(event.getSceneY() - mouseOriginal.getY());
+            if (event.getButton().equals(dragButton) && cycleStatus != INACTIVE) {
+                target.setTranslateX(event.getSceneX() / target.getScaleX() - mouseOriginal.getX());
+                target.setTranslateY(event.getSceneY() / target.getScaleY() - mouseOriginal.getY());
+
+                event.consume();
             }
         };
         commitPositionOnRelease = event -> {
-            if (cycleStatus != INACTIVE) {
+            if (event.getButton().equals(dragButton) && cycleStatus != INACTIVE) {
                 //commit changes to LayoutX and LayoutY
                 target.setLayoutX(targetOriginal.getX() + event.getSceneX() - mouseOriginal.getX());
                 target.setLayoutY(targetOriginal.getY() + event.getSceneY() - mouseOriginal.getY());
