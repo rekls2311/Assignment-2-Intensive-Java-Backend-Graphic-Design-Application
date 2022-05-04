@@ -31,7 +31,10 @@
                <content>
                   <StackPane fx:id="paneCanvas" prefHeight="150.0" prefWidth="200.0" />
                </content></ScrollPane>
-          <AnchorPane fx:id="anchorPaneProperties" minHeight="0.0" />
+          <AnchorPane minHeight="0.0" prefHeight="516.0" prefWidth="140.0">
+               <children>
+                  <VBox fx:id="vBoxProperties" alignment="TOP_CENTER" layoutX="17.0" layoutY="84.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
         </items>
       </SplitPane>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="1278.0" />

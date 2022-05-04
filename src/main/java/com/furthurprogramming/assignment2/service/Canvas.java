@@ -62,7 +62,7 @@ public class Canvas {
                 element.IsSelected.setValue(false);
         }
     }
-    
+
     private void elementIsSelectedListener(Observable observable, boolean oldVal, boolean newVal) {
         if (newVal) {
             for (var element : elementList) {
