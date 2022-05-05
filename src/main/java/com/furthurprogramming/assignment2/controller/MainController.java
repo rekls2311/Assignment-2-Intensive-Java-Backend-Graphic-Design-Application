@@ -2,18 +2,15 @@ package com.furthurprogramming.assignment2.controller;
 
 import java.io.IOException;
 
-import com.furthurprogramming.assignment2.service.Canvas;
+import com.furthurprogramming.assignment2.service.canvas.Canvas;
 import com.furthurprogramming.assignment2.service.element.CanvasCircle;
 import com.furthurprogramming.assignment2.service.element.CanvasRectangle;
 import com.furthurprogramming.assignment2.service.element.CanvasText;
-import com.furthurprogramming.assignment2.util.JavaFXUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import com.furthurprogramming.assignment2.Main;
-import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;

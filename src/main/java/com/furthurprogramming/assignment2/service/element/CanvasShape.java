@@ -18,16 +18,15 @@ import javafx.scene.shape.Shape;
 import java.io.IOException;
 
 public abstract class CanvasShape extends CanvasElement{
-    private Shape shape;
-    private DragController dragController;
+    protected Shape shape;
     CanvasShapePropertyController viewController;
 
     public CanvasShape(Pane propertyPane, Shape shape)  {
-        super(propertyPane, "shape_property",  new CanvasShapePropertyController());
+        super(propertyPane,
+                "shape_property",
+                new CanvasShapePropertyController(),
+                shape);
         this.shape = shape;
-
-        dragController = new DragController(shape);
-
 
         viewController = (CanvasShapePropertyController)getPropertyViewController();
 
@@ -50,16 +49,6 @@ public abstract class CanvasShape extends CanvasElement{
 
     }
 
-
-    @Override
-    public Node getNodeObject(){
-        return shape;
-    }
-
-    @Override
-    public boolean containsPoint(Point2D point) {
-        return shape.contains(point);
-    }
 
     public CanvasShape setRotation(double degree)
     {

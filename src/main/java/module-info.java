@@ -18,4 +18,5 @@ module com.furthurprogramming.assignment2 {
     exports com.furthurprogramming.assignment2.controller.element;
 
     exports com.furthurprogramming.assignment2.service.element;
+    exports com.furthurprogramming.assignment2.service.canvas;
 }

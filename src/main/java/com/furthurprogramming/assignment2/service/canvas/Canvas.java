@@ -1,17 +1,11 @@
-package com.furthurprogramming.assignment2.service;
+package com.furthurprogramming.assignment2.service.canvas;
 
 import com.furthurprogramming.assignment2.service.element.CanvasElement;
-import com.furthurprogramming.assignment2.service.element.CanvasShape;
-import com.furthurprogramming.assignment2.service.element.DragController;
-import javafx.animation.AnimationTimer;
 import javafx.beans.Observable;
-import javafx.geometry.Point2D;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,7 +17,7 @@ public class Canvas {
 
     List<CanvasElement> elementList;
 
-    DragController dragController;
+    CanvasDragger canvasDragger;
 
     public Canvas(Pane root , int width, int height)
     {
@@ -55,12 +49,12 @@ public class Canvas {
 
     private void canvasPaneOnMousePressedHandler(MouseEvent e)
     {
-        for(var element : elementList){
-            if (!element.containsPoint(new Point2D(
-                    e.getX() - element.getNodeObject().getLayoutX(),
-                    e.getY() - element.getNodeObject().getLayoutY())))
-                element.IsSelected.setValue(false);
-        }
+//        for(var element : elementList){
+//            if (!element.containsPoint(new Point2D(
+//                    e.getX() - element.getGroup().getLayoutX(),
+//                    e.getY() - element.getGroup().getLayoutY())))
+//                element.IsSelected.setValue(false);
+//        }
     }
 
     private void elementIsSelectedListener(Observable observable, boolean oldVal, boolean newVal) {
@@ -92,7 +86,7 @@ public class Canvas {
         elem.setCanvas(this);
         elem.IsSelected.addListener(this::elementIsSelectedListener);
 
-        var nodeObject = elem.getNodeObject();
+        var nodeObject = elem.getGroup();
         canvasPane.getChildren().add(nodeObject);
 
         nodeObject.setLayoutX(canvasPane.getWidth() / 2 - nodeObject.getLayoutBounds().getCenterX());

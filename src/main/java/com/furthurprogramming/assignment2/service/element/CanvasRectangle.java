@@ -7,18 +7,30 @@ import javafx.scene.shape.Rectangle;
 
 public class CanvasRectangle extends CanvasShape {
 
-    protected Rectangle rectangle;
-
-
     public CanvasRectangle(Pane propertyPane, double v1, double v2)  {
         super(propertyPane, new Rectangle(v1, v2));
-
-        rectangle = (Rectangle)getNodeObject();
 
     }
 
     @Override
     public void setBackgroundColor(Color color) {
         super.setForegroundColor(color);
+    }
+
+    @Override
+    public Rectangle getBoundingRectangle() {
+        return (Rectangle)shape;
+    }
+
+    @Override
+    public void updateTransform(Rectangle bounds) {
+        var rect = (Rectangle)shape;
+
+//        System.out.println(bounds);
+
+        rect.setX(bounds.getX());
+        rect.setY(bounds.getY());
+        rect.setWidth(bounds.getWidth());
+        rect.setHeight(bounds.getHeight());
     }
 }

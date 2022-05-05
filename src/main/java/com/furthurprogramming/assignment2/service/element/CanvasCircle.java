@@ -6,13 +6,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class CanvasCircle extends CanvasShape {
-    protected Circle circle;
-
 
     public CanvasCircle(Pane propertyPane, double radius){
         super(propertyPane, new Circle(radius));
 
-        circle = (Circle) getNodeObject();
     }
 
 

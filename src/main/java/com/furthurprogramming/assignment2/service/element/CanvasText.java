@@ -32,7 +32,7 @@ public class CanvasText extends CanvasShape {
     public CanvasText(Pane propertyPane, String text) {
         super(propertyPane, new Text(text));
 
-        this.text = (Text)getNodeObject();
+        this.text = (Text)shape;
 
         viewController = new CanvasTextPropertyController(this);
         try {
@@ -167,7 +167,6 @@ public class CanvasText extends CanvasShape {
     }
     @Override
     protected void select() {
-
         getPropertyPane().getChildren().add(textPropetyView);
         super.select();
     }
