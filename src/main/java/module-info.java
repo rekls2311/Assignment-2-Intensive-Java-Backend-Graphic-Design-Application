@@ -16,4 +16,6 @@ module com.furthurprogramming.assignment2 {
 
     opens com.furthurprogramming.assignment2.controller.element to javafx.fxml;
     exports com.furthurprogramming.assignment2.controller.element;
+
+    exports com.furthurprogramming.assignment2.service.element;
 }

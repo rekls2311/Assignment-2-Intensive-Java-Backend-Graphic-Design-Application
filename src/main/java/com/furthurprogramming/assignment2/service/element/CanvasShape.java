@@ -1,5 +1,6 @@
 package com.furthurprogramming.assignment2.service.element;
 
+import com.furthurprogramming.assignment2.controller.element.CanvasShapePropertyController;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.Event;
@@ -19,13 +20,17 @@ import java.io.IOException;
 public abstract class CanvasShape extends CanvasElement{
     private Shape shape;
     private DragController dragController;
+    CanvasShapePropertyController viewController;
 
-
-    public CanvasShape(Pane propertyPane, String viewName, Object viewController, Shape shape)  {
-        super(propertyPane, viewName,  viewController);
+    public CanvasShape(Pane propertyPane, Shape shape)  {
+        super(propertyPane, "shape_property",  new CanvasShapePropertyController());
         this.shape = shape;
 
         dragController = new DragController(shape);
+
+
+        viewController = (CanvasShapePropertyController)getPropertyViewController();
+
 
         createHandlers();
     }
@@ -33,6 +38,9 @@ public abstract class CanvasShape extends CanvasElement{
     private void createHandlers(){
         this.shape.setOnMousePressed(this::shapeOnMousePressedHandler);
         this.shape.setOnMouseClicked(this::shapeOnMouseClickedHandler);
+        viewController.colorPickerBackGroundCircle.setOnAction(actionEvent ->{
+            setBackgroundColor(viewController.colorPickerBackGroundCircle.getValue());
+        });
     }
 
     private void shapeOnMousePressedHandler(MouseEvent e){
@@ -79,8 +87,8 @@ public abstract class CanvasShape extends CanvasElement{
     public double getRotation() {return shape.getRotate();}
     public Point2D getScale() {return new Point2D(shape.getScaleX(), shape.getScaleY());}
 
-    public void setBackgroundColor(){
-
+    public void setBackgroundColor(Color color){
+        shape.setStyle("-fx-background-color: #" + color.toString().substring(2));
     }
 
     public void setForegroundColor(Color color){

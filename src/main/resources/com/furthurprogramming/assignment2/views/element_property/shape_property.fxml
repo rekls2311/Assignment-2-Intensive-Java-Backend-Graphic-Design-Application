@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ColorPicker fx:id="colorPickerBackGroundCircle" layoutX="101.0" layoutY="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="11.0" layoutY="18.0" prefHeight="17.0" prefWidth="69.0" text="Background" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="18.0" />
+   </children>
+</AnchorPane>

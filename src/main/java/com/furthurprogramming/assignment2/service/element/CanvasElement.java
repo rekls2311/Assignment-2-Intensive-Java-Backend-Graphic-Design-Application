@@ -61,18 +61,26 @@ public abstract class CanvasElement {
         return propertyViewController;
     }
 
+    public Pane getPropertyPane(){
+        return propertyPane;
+    }
+
+    public Parent getView(){
+        return fxmlProperties;
+    }
+
     /////////////////////////////////////////////////////////////////////
     // Public methods
     /////////////////////////////////////////////////////////////////////
 
     // Occur when user click to select the element
-    private void select() {
+    protected void select() {
         if (!propertyPane.getChildren().contains(fxmlProperties)) {
             propertyPane.getChildren().add(fxmlProperties);
         }
     }
 
-    private void deselect() {
+    protected void deselect() {
         propertyPane.getChildren().remove(fxmlProperties);
     }
 

@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46480ff4-1397-4700-927d-1184f26d94e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/text_property_ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/element/CanvasTextPropertyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/text_property.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/element/CanvasCirclePropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/element/CanvasShapePropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/element/CanvasRectanglePropertyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/circle_property.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/shape_property.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/rectangle_property.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/element_property/circle_property.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/element_property/rectangle_property.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,11 +120,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasCircle.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

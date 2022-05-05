@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.furthurprogramming.assignment2.service.Canvas;
 import com.furthurprogramming.assignment2.service.element.CanvasCircle;
 import com.furthurprogramming.assignment2.service.element.CanvasRectangle;
+import com.furthurprogramming.assignment2.service.element.CanvasText;
 import com.furthurprogramming.assignment2.util.JavaFXUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,8 @@ public class MainController {
 
     @FXML
     Button buttonAddCircle;
+    @FXML
+    Button buttonAddText;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -61,6 +64,7 @@ public class MainController {
     {
         buttonAddCircle.setOnAction(this::buttonAddCircleOnActionHandler);
         buttonAddRectangle.setOnAction(this::buttonAddRectangleOnActionHandler);
+        buttonAddText.setOnAction(this::buttonAddTextOnActionHandler);
     }
 
     public MainController()
@@ -71,11 +75,20 @@ public class MainController {
     // Event handler
     ////////////////////////////////////////////////////////////////////
     private void buttonAddCircleOnActionHandler(ActionEvent e){
-        mainCanvas.addElement(new CanvasCircle(vBoxProperties,100));
+        var circleElem = new CanvasCircle(vBoxProperties,100);
+        mainCanvas.addElement(circleElem);
+        circleElem.IsSelected.set(true);
     }
 
     private void buttonAddRectangleOnActionHandler(ActionEvent e){
-        mainCanvas.addElement(new CanvasRectangle(vBoxProperties,200, 100));
+        var rectElem = new CanvasRectangle(vBoxProperties,200, 100);
+        mainCanvas.addElement(rectElem);
+        rectElem.IsSelected.set(true);
+    }
+    private void buttonAddTextOnActionHandler(ActionEvent e){
+        var textElem = new CanvasText(vBoxProperties, "Text");
+        mainCanvas.addElement(textElem);
+        textElem.IsSelected.set(true);
     }
 
     /////////////////////////////////////////////////////////////////////

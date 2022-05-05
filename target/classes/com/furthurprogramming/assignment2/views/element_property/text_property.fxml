@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="262.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="11.0" layoutY="14.0" prefHeight="19.0" prefWidth="70.0" text="Text" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="11.0" layoutY="47.0" prefHeight="19.0" prefWidth="70.0" text="Font" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="47.0" />
+      <Label layoutX="11.0" layoutY="84.0" prefHeight="19.0" prefWidth="70.0" text="Font Size" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="84.0" />
+      <Label layoutX="11.0" layoutY="193.0" prefHeight="19.0" prefWidth="70.0" text="Text colour" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="193.0" />
+      <Label layoutX="11.0" layoutY="122.0" prefHeight="19.0" prefWidth="70.0" text="Weight" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="122.0" />
+      <Label layoutX="13.0" layoutY="226.0" prefHeight="19.0" prefWidth="70.0" text="Alignment" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="226.0" />
+      <TextField fx:id="textFieldText" layoutX="100.0" layoutY="11.0" prefHeight="25.0" prefWidth="145.0" promptText="Text" text="Text" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="11.0" />
+      <ComboBox fx:id="comboBoxFont" layoutX="100.0" layoutY="44.0" prefHeight="25.0" prefWidth="145.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="44.0" />
+      <Spinner fx:id="spinnerFontSize" editable="true" layoutX="100.0" layoutY="81.0" prefHeight="25.0" prefWidth="101.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="81.0" />
+      <ColorPicker fx:id="colorPickerTextColour" layoutX="81.0" layoutY="190.0" prefHeight="25.0" prefWidth="145.0" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="buttonAlignLeft" layoutX="189.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" text="Button" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="223.0" />
+      <Button fx:id="buttonAlignCenter" layoutX="80.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" text="Button" AnchorPane.rightAnchor="124.0" AnchorPane.topAnchor="223.0" />
+      <Button fx:id="buttonAlignRight" layoutX="135.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" text="Button" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="223.0" />
+      <ComboBox fx:id="comboBoxWeight" layoutX="81.0" layoutY="119.0" prefHeight="25.0" prefWidth="145.0" />
+      <ComboBox fx:id="comboBoxPosture" layoutX="81.0" layoutY="156.0" prefHeight="25.0" prefWidth="145.0" />
+      <Label layoutX="11.0" layoutY="159.0" prefHeight="19.0" prefWidth="70.0" text="Posture" />
+   </children>
+</AnchorPane>
