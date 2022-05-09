@@ -1,6 +1,9 @@
 package com.furthurprogramming.assignment2.service.canvas;
 
+import javafx.animation.Animation;
+import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -9,7 +12,7 @@ import javafx.scene.transform.Affine;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CanvasTransformer {
+public class CanvasTransformer extends AnimationTimer {
 
     private static final int ROTATE = 0;
     private static final int TOPLEFT = 1;
@@ -55,6 +58,13 @@ public class CanvasTransformer {
         controlPoints.get(TOPRIGHT ).setOnMouseDragged(this::controlPointTopRightOnMouseDraggedHandler);
         controlPoints.get(BOTRIGHT ).setOnMouseDragged(this::controlPointBotRightOnMouseDraggedHandler);
         controlPoints.get(BOTLEFT  ).setOnMouseDragged(this::controlPointBotLeftOnMouseDraggedHandler);
+
+        start();
+    }
+
+    @Override
+    public void handle(long now) {
+        refreshControlPoints();
     }
 
     public Boolean isTransforming(){
@@ -128,7 +138,6 @@ public class CanvasTransformer {
         newBounds.setX(controlPoints.get(TOPLEFT).getLayoutX());
 
         transformable.updateTransform(newBounds);
-        refreshControlPoints();
     }
     private void controlPointTopRightOnMouseDraggedHandler(MouseEvent mouseEvent){
         var newBounds = transformable.getBoundingRectangle();
@@ -138,7 +147,6 @@ public class CanvasTransformer {
         newBounds.setY(controlPoints.get(TOPRIGHT).getLayoutY());
 
         transformable.updateTransform(newBounds);
-        refreshControlPoints();
     }
     private void controlPointBotRightOnMouseDraggedHandler(MouseEvent mouseEvent){
         var newBounds = transformable.getBoundingRectangle();
@@ -147,7 +155,6 @@ public class CanvasTransformer {
         newBounds.setWidth(Math.abs(controlPoints.get(BOTRIGHT).getLayoutX() - controlPoints.get(BOTLEFT).getLayoutX()));
 
         transformable.updateTransform(newBounds);
-        refreshControlPoints();
     }
     private void controlPointBotLeftOnMouseDraggedHandler(MouseEvent mouseEvent){
         var newBounds = transformable.getBoundingRectangle();
@@ -157,7 +164,6 @@ public class CanvasTransformer {
         newBounds.setX(controlPoints.get(BOTLEFT).getLayoutX());
 
         transformable.updateTransform(newBounds);
-        refreshControlPoints();
     }
 
     private void mainNodeOnDraggedHandler(DragEvent dragEvent){

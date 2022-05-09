@@ -1,6 +1,8 @@
 package com.furthurprogramming.assignment2.util;
 
+import com.furthurprogramming.assignment2.Main;
 import javafx.scene.image.*;
+import javafx.stage.FileChooser;
 
 import java.io.*;
 import java.awt.image.BufferedImage;
@@ -42,5 +44,11 @@ public class ImageUtil {
         BufferedImage bImage2 = ImageIO.read(bis);
 
         return convertToFxImage(bImage2);
+    }
+
+    public static File chooseImageFile() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        return fileChooser.showOpenDialog(Main.getStage());
     }
 }

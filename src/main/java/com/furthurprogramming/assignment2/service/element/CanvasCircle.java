@@ -12,7 +12,6 @@ public class CanvasCircle extends CanvasShape {
 
     }
 
-
     @Override
     public void setBackgroundColor(Color color) {
         super.setForegroundColor(color);

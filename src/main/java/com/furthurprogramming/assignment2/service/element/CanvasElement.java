@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 public abstract class CanvasElement implements ICanvasTransformable {
-    private final Parent fxmlProperties;
+    private Parent fxmlProperties;
     private final Pane propertyPane;
     private Object propertyViewController;
     private Canvas canvas;
@@ -29,21 +29,14 @@ public abstract class CanvasElement implements ICanvasTransformable {
     // Abstract methods
     /////////////////////////////////////////////////////////////////////
     // This is overridden from subclasses to draw itself
-
     public CanvasElement(@NotNull Pane propertyPane,
-                         @NotNull String propertyViewName,
-                         @NotNull Object propertyViewController,
                          @NotNull Node nodeObject)  {
+
         this.node = nodeObject;
+
 
         this.group = new Group();
         this.group.getChildren().add(nodeObject);
-
-        try {
-            fxmlProperties = JavaFXUtil.loadFXML("element_property/" + propertyViewName, propertyViewController);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
         IsSelected = new SimpleBooleanProperty();
 
@@ -57,8 +50,21 @@ public abstract class CanvasElement implements ICanvasTransformable {
         });
 
         this.propertyPane = propertyPane;
-        this.propertyViewController = propertyViewController;
         this.transformController = new CanvasTransformer(this);
+        this.node.setOnMousePressed(mouseEvent -> {IsSelected.set(true);});
+    }
+
+    public void loadFxml(
+            @NotNull String propertyViewName,
+            @NotNull Object propertyViewController){
+
+        try {
+            this.fxmlProperties = JavaFXUtil.loadFXML("element_property/" + propertyViewName, propertyViewController);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        this.propertyViewController = propertyViewController;
     }
 
     public void setCanvas(Canvas canvas){

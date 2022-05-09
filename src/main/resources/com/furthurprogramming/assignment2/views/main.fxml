@@ -27,7 +27,7 @@
                   <Button fx:id="buttonAddRectangle" layoutX="13.0" layoutY="108.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Rectangle" textAlignment="CENTER" />
                   <Button fx:id="buttonAddCircle" layoutX="13.0" layoutY="195.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Circle" textAlignment="CENTER" />
                   <Button fx:id="buttonAddText" layoutX="13.0" layoutY="21.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Text" textAlignment="CENTER" />
-                  <Button fx:id="buttonAddCircle1" layoutX="13.0" layoutY="292.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Image" textAlignment="CENTER" />
+                  <Button fx:id="buttonAddImage" layoutX="13.0" layoutY="283.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Image" textAlignment="CENTER" />
                </children></AnchorPane>
             <ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.81" pannable="true" prefHeight="200.0" prefWidth="200.0" vvalue="0.61">
                <content>

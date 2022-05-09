@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import com.furthurprogramming.assignment2.model.UserDAO;
+import com.furthurprogramming.assignment2.util.ImageUtil;
 import javafx.fxml.FXML;
 import com.furthurprogramming.assignment2.Main;
 import javafx.scene.canvas.Canvas;
@@ -83,7 +84,7 @@ public class SignUpController {
     }
 
     private void buttonOnImageActionHandler(){
-        var file = chooseImageFile();
+        var file = ImageUtil.chooseImageFile();
 
         if (file == null)
             return;
@@ -143,14 +144,6 @@ public class SignUpController {
         promptUser(message, "0,0,0");
     }
 
-    private File chooseImageFile()
-    {
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
-        File chosenFile = fileChooser.showOpenDialog(Main.getStage());
-        return chosenFile;
-    }
 
     private void setImageviewProfileimage(Image img)
     {

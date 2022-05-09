@@ -24,32 +24,23 @@ public abstract class CanvasShape extends CanvasElement{
 
     public CanvasShape(Pane propertyPane, Shape shape)  {
         super(propertyPane,
-                "shape_property",
-                new CanvasShapePropertyController(),
                 shape);
+
+        this.loadFxml("shape_property",
+                new CanvasShapePropertyController());
+
         this.shape = shape;
 
         viewController = (CanvasShapePropertyController)getPropertyViewController();
-
 
         createHandlers();
     }
 
     private void createHandlers(){
-        this.shape.setOnMousePressed(this::shapeOnMousePressedHandler);
-        this.shape.setOnMouseClicked(this::shapeOnMouseClickedHandler);
         viewController.colorPickerBackGroundCircle.setOnAction(actionEvent ->{
             setBackgroundColor(viewController.colorPickerBackGroundCircle.getValue());
         });
     }
-
-    private void shapeOnMousePressedHandler(MouseEvent e){
-        IsSelected.setValue(true);
-    }
-    private void shapeOnMouseClickedHandler(MouseEvent e){
-
-    }
-
 
     public CanvasShape setRotation(double degree)
     {
