@@ -19,18 +19,26 @@ public class CanvasRectangle extends CanvasShape {
 
     @Override
     public Rectangle getBoundingRectangle() {
-        return (Rectangle)shape;
+        Rectangle bounds = new Rectangle();
+        var rect = (Rectangle)shape;
+
+        bounds.setRotate(rect.getRotate());
+        bounds.setX(rect.getX());
+        bounds.setY(rect.getY());
+        bounds.setWidth(rect.getWidth());
+        bounds.setHeight(rect.getHeight());
+
+        return bounds;
     }
 
     @Override
     public void updateTransform(Rectangle bounds) {
         var rect = (Rectangle)shape;
 
-//        System.out.println(bounds);
-
         rect.setX(bounds.getX());
         rect.setY(bounds.getY());
         rect.setWidth(bounds.getWidth());
         rect.setHeight(bounds.getHeight());
+        rect.setRotate(bounds.getRotate());
     }
 }

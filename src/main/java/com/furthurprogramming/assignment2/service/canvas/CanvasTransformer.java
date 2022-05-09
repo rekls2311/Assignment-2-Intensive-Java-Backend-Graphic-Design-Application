@@ -80,8 +80,6 @@ public class CanvasTransformer {
         var bounds = transformable.getBoundingRectangle();
         var w = bounds.getWidth();
         var h = bounds.getHeight();
-        // Rotate points
-        controlGroup.setRotate(bounds.getRotate());
 
         controlPoints.get(ROTATE  ).setLayoutX(w / 2);
         controlPoints.get(TOPLEFT ).setLayoutX(0);
@@ -118,8 +116,8 @@ public class CanvasTransformer {
 
         newBounds.setRotate(angle);
 
-        transformable.updateTransform(newBounds);
-        refreshControlPoints();
+        //transformable.updateTransform(newBounds);
+        //refreshControlPoints();
     }
     private void controlPointTopLeftOnMouseDraggedHandler(MouseEvent mouseEvent){
         var newBounds = transformable.getBoundingRectangle();

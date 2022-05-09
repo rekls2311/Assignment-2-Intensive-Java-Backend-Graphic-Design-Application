@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46480ff4-1397-4700-927d-1184f26d94e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/CanvasDragger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/CanvasTransformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/ICanvasTransformable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/element/CanvasImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/element_property/image_property.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/Canvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasCircle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/CanvasTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/canvas/CanvasTransformer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasRectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/CanvasText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/service/element/DragController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -64,7 +59,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Teaching/Long/FurthurProgramming.Assignment2/lib/sqlite-jdbc-3.36.0.3.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Teaching/Long/FurthurProgramming.Assignment2/src/main/resources/com/furthurprogramming/assignment2/views/element_property&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37931034&quot;,
@@ -72,6 +67,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\resources\com\furthurprogramming\assignment2\views\element_property" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\resources\com\furthurprogramming\assignment2\views\element_property" />
       <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\java\com\furthurprogramming\assignment2\controller" />
