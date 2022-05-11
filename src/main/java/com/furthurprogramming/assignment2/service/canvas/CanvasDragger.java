@@ -21,15 +21,12 @@ class DragEvent extends Event {
 }
 
 public class CanvasDragger {
-
-
     private final Node target;
     private Point2D mousePrevious; // Relative to the scene
 
     private EventHandler<MouseEvent> setAnchor;
     private EventHandler<MouseEvent> updatePositionOnDrag;
     private EventHandler<DragEvent> onDragging;
-
 
     MouseButton dragButton;
 
@@ -40,11 +37,22 @@ public class CanvasDragger {
         this.mousePrevious = Point2D.ZERO;
 
         createHandlers();
-        createEvents();
+
+        enable();
     }
 
     public CanvasDragger(Node target)  {
         this(target, MouseButton.PRIMARY);
+    }
+
+    public void enable(){
+        target.addEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
+        target.addEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
+    }
+
+    public void disable(){
+        target.removeEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
+        target.removeEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
     }
 
     private void createHandlers() {
@@ -71,12 +79,5 @@ public class CanvasDragger {
 
     public void setOnDragging(EventHandler<DragEvent> eventHandler) {
         onDragging = eventHandler;
-    }
-
-    private void createEvents(){
-
-        target.addEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
-        target.addEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
-
     }
 }

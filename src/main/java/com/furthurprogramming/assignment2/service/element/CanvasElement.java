@@ -17,23 +17,22 @@ import java.io.IOException;
 
 public abstract class CanvasElement implements ICanvasTransformable {
     private Parent fxmlProperties;
-    private final Pane propertyPane;
+    private Pane propertyPane;
     private Object propertyViewController;
     private Canvas canvas;
     private Group group;
     private Node node;
     public BooleanProperty IsSelected;
+    public Boolean IsTransformable;
     private CanvasTransformer transformController;
 
     /////////////////////////////////////////////////////////////////////
     // Abstract methods
     /////////////////////////////////////////////////////////////////////
     // This is overridden from subclasses to draw itself
-    public CanvasElement(@NotNull Pane propertyPane,
-                         @NotNull Node nodeObject)  {
+    public CanvasElement(@NotNull Node nodeObject)  {
 
         this.node = nodeObject;
-
 
         this.group = new Group();
         this.group.getChildren().add(nodeObject);
@@ -49,9 +48,13 @@ public abstract class CanvasElement implements ICanvasTransformable {
             }
         });
 
-        this.propertyPane = propertyPane;
         this.transformController = new CanvasTransformer(this);
+        IsTransformable = true;
         this.node.setOnMousePressed(mouseEvent -> {IsSelected.set(true);});
+    }
+
+    public void setPropertyPane(@NotNull Pane propertyPane){
+        this.propertyPane = propertyPane;
     }
 
     public void loadFxml(
@@ -93,18 +96,20 @@ public abstract class CanvasElement implements ICanvasTransformable {
     }
 
     // Occur when user click to select the element
-    protected void select() {
+    public void select() {
         if (!propertyPane.getChildren().contains(fxmlProperties)) {
             propertyPane.getChildren().add(fxmlProperties);
         }
 
-        transformController.startTransform();
+        if (transformController != null && IsTransformable)
+            transformController.startTransform();
     }
 
-    protected void deselect() {
+    public void deselect() {
         propertyPane.getChildren().remove(fxmlProperties);
 
-        transformController.stopTransform();
+        if (transformController != null)
+            transformController.stopTransform();
     }
 
     public Group getParentGroup(){

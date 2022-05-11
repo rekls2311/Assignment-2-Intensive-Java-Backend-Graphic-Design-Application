@@ -28,6 +28,7 @@
                   <Button fx:id="buttonAddCircle" layoutX="13.0" layoutY="195.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Circle" textAlignment="CENTER" />
                   <Button fx:id="buttonAddText" layoutX="13.0" layoutY="21.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Text" textAlignment="CENTER" />
                   <Button fx:id="buttonAddImage" layoutX="13.0" layoutY="283.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Image" textAlignment="CENTER" />
+                  <Button fx:id="buttonAddCanvas" layoutX="13.0" layoutY="371.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="75.0" text="Canvas" textAlignment="CENTER" />
                </children></AnchorPane>
             <ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.81" pannable="true" prefHeight="200.0" prefWidth="200.0" vvalue="0.61">
                <content>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<DialogPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane>
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Width, px" />
+            <Label layoutX="12.0" layoutY="55.0" text="Height, px" />
+            <TextField fx:id="textFieldWidth" layoutX="82.0" layoutY="10.0" />
+            <TextField fx:id="textFieldHeight" layoutX="82.0" layoutY="51.0" />
+         </children>
+      </AnchorPane>
+   </content>
+   <buttonTypes>
+      <ButtonType fx:constant="OK" />
+      <ButtonType fx:constant="CANCEL" />
+   </buttonTypes>
+</DialogPane>

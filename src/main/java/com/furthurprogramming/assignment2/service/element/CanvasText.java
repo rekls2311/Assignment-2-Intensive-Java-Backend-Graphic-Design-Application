@@ -29,8 +29,8 @@ public class CanvasText extends CanvasShape {
     CanvasTextPropertyController viewController;
     Text text;
 
-    public CanvasText(Pane propertyPane, String text) {
-        super(propertyPane, new Text(text));
+    public CanvasText(String text) {
+        super(new Text(text));
 
         this.text = (Text)shape;
 
@@ -166,13 +166,13 @@ public class CanvasText extends CanvasShape {
         return FontPosture.REGULAR;
     }
     @Override
-    protected void select() {
+    public void select() {
         getPropertyPane().getChildren().add(textPropetyView);
         super.select();
     }
 
     @Override
-    protected void deselect() {
+    public void deselect() {
         getPropertyPane().getChildren().remove(textPropetyView);
         super.deselect();
     }

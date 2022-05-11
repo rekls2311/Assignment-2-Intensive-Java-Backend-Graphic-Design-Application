@@ -44,6 +44,7 @@ public class CanvasTransformer extends AnimationTimer {
 
         groupDragController = new CanvasDragger(transformable.getMainNode());
         groupDragController.setOnDragging(this::mainNodeOnDraggedHandler);
+        groupDragController.disable();
 
         for(int i = 0; i < 5; ++i) {
             var newControl = new Circle(10);
@@ -77,13 +78,15 @@ public class CanvasTransformer extends AnimationTimer {
         refreshControlPoints();
 
         group.getChildren().add(controlGroup);
+        groupDragController.enable();
     }
 
     public void stopTransform(){
         group.getChildren().remove(controlGroup);
 
-
         isTransforming = false;
+
+        groupDragController.disable();
     }
 
     private void refreshControlPoints(){

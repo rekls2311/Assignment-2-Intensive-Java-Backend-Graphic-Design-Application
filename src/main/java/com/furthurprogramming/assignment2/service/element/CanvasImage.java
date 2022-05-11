@@ -12,10 +12,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class CanvasImage extends CanvasElement{
 
-    public CanvasImage(@NotNull Pane propertyPane) {
-        super(propertyPane, new ImageView());
+    public CanvasImage(Image img) {
+        super(new ImageView());
 
         this.loadFxml("image_property", new CanvasImagePropertyController(this));
+
+        setImage(img);
     }
 
     public void setImage(Image img){

@@ -7,8 +7,8 @@ import javafx.scene.shape.Circle;
 
 public class CanvasCircle extends CanvasShape {
 
-    public CanvasCircle(Pane propertyPane, double radius){
-        super(propertyPane, new Circle(radius));
+    public CanvasCircle(double radius){
+        super(new Circle(radius));
 
     }
 

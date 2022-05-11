@@ -22,9 +22,8 @@ public abstract class CanvasShape extends CanvasElement{
     protected Shape shape;
     CanvasShapePropertyController viewController;
 
-    public CanvasShape(Pane propertyPane, Shape shape)  {
-        super(propertyPane,
-                shape);
+    public CanvasShape(Shape shape)  {
+        super(shape);
 
         this.loadFxml("shape_property",
                 new CanvasShapePropertyController());
@@ -48,13 +47,13 @@ public abstract class CanvasShape extends CanvasElement{
         return this;
     }
 
-    public CanvasShape setX(double x){
-        shape.setTranslateX(x);
+    public CanvasShape setLayoutX(double x){
+        shape.setLayoutX(x);
         return this;
     }
 
-    public CanvasShape setY(double y){
-        shape.setTranslateY(y);
+    public CanvasShape setLayoutY(double y){
+        shape.setLayoutY(y);
         return this;
     }
 
@@ -63,8 +62,8 @@ public abstract class CanvasShape extends CanvasElement{
         return this;
     }
 
-    public double getX() {return shape.getTranslateX();}
-    public double getY() {return shape.getTranslateY();}
+    public double getLayoutX() {return shape.getLayoutX();}
+    public double getLayoutY() {return shape.getLayoutY();}
     public double getRotation() {return shape.getRotate();}
     public Point2D getScale() {return new Point2D(shape.getScaleX(), shape.getScaleY());}
 

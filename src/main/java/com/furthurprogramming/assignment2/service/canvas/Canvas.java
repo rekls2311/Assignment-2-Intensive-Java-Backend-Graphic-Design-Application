@@ -1,28 +1,32 @@
 package com.furthurprogramming.assignment2.service.canvas;
 
+import com.furthurprogramming.assignment2.service.element.CanvasBackground;
 import com.furthurprogramming.assignment2.service.element.CanvasElement;
+import com.furthurprogramming.assignment2.service.element.CanvasRectangle;
 import javafx.beans.Observable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
+import javax.swing.tree.FixedHeightLayoutCache;
 import java.util.List;
 import java.util.ArrayList;
 
 public class Canvas {
 
     Pane rootPane;
-
     Pane canvasPane;
-
+    Pane propertyPane;
     List<CanvasElement> elementList;
 
-    CanvasDragger canvasDragger;
+    CanvasBackground background;
 
-    public Canvas(Pane root , int width, int height)
+    public Canvas(Pane root, Pane propertyPane, int width, int height)
     {
         // Set panels
         this.rootPane = root;
+        this.propertyPane = propertyPane;
 
         canvasPane = new Pane();
         this.rootPane.getChildren().add(canvasPane);
@@ -36,6 +40,21 @@ public class Canvas {
         elementList = new ArrayList<>();
 
         createHandlers();
+
+        this.background = new CanvasBackground(width, height);
+        addElement(this.background);
+        this.background.setLayoutX(width / 2);
+        this.background.setLayoutY(height / 2);
+
+        setBackgroundColor(Color.WHITE);
+    }
+
+    public void removeCanvas(){
+        for(var elem : elementList){
+            elem.deselect();
+        }
+
+        rootPane.getChildren().remove(canvasPane);
     }
 
     void createHandlers()
@@ -78,11 +97,13 @@ public class Canvas {
 
     public void setBackgroundColor(Color color)
     {
-        canvasPane.setStyle("-fx-background-color: #" + color.toString().substring(2));
+        background.setBackgroundColor(color);
     }
 
     public void addElement(CanvasElement elem)
     {
+        elem.setPropertyPane(propertyPane);
+
         elem.setCanvas(this);
         elem.IsSelected.addListener(this::elementIsSelectedListener);
 

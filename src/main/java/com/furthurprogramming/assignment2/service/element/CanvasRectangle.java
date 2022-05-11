@@ -7,8 +7,8 @@ import javafx.scene.shape.Rectangle;
 
 public class CanvasRectangle extends CanvasShape {
 
-    public CanvasRectangle(Pane propertyPane, double v1, double v2)  {
-        super(propertyPane, new Rectangle(v1, v2));
+    public CanvasRectangle(double v1, double v2)  {
+        super(new Rectangle(v1, v2));
 
     }
 
