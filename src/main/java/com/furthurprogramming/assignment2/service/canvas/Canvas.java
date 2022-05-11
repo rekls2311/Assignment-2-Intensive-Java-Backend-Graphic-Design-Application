@@ -18,8 +18,7 @@ public class Canvas {
     Pane rootPane;
     Pane canvasPane;
     Pane propertyPane;
-    List<CanvasElement> elementList;
-
+    List<CanvasElement> elementList; // First element is background
     CanvasBackground background;
 
     public Canvas(Pane root, Pane propertyPane, int width, int height)
@@ -50,11 +49,35 @@ public class Canvas {
     }
 
     public void removeCanvas(){
-        for(var elem : elementList){
-            elem.deselect();
-        }
-
+        clearCanvas();
+        background.IsSelected.set(false);
+        canvasPane.getChildren().remove(background.getParentGroup());
+        elementList.clear();
         rootPane.getChildren().remove(canvasPane);
+    }
+
+    public void clearCanvas(){
+        for(int i = 1; i < elementList.size(); i++){
+            var elem = elementList.get(i);
+            elem.IsSelected.set(false);
+            canvasPane.getChildren().remove(elem.getParentGroup());
+        }
+        elementList.clear();
+        elementList.add(background);
+    }
+
+    public void removeSelectedElements(){
+        for(int i = 1; i < elementList.size(); ++i){
+            var elem = elementList.get(i);
+            if (elem.IsSelected.get()){
+
+                elem.IsSelected.set(false);
+                canvasPane.getChildren().remove(elem.getParentGroup());
+
+                elementList.remove(i);
+                i--;
+            }
+        }
     }
 
     void createHandlers()
@@ -107,7 +130,7 @@ public class Canvas {
         elem.setCanvas(this);
         elem.IsSelected.addListener(this::elementIsSelectedListener);
 
-        var nodeObject = elem.getGroup();
+        var nodeObject = elem.getParentGroup();
         canvasPane.getChildren().add(nodeObject);
 
         nodeObject.setLayoutX(canvasPane.getWidth() / 2 - nodeObject.getLayoutBounds().getCenterX());

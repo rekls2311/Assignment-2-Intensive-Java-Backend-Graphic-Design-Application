@@ -13,10 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import com.furthurprogramming.assignment2.Main;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -30,10 +27,8 @@ public class MainController {
     /////////////////////////////////////////////////////////////////////
     @FXML
     Pane paneCanvas;
-
     @FXML
     VBox vBoxProperties;
-
     @FXML
     Button buttonAddRectangle;
     @FXML
@@ -44,6 +39,14 @@ public class MainController {
     Button buttonAddImage;
     @FXML
     Button buttonAddCanvas;
+    @FXML
+    MenuItem menuItemNewCanvas;
+    @FXML
+    MenuItem menuItemClearCanvas;
+    @FXML
+    MenuItem menuItemSaveAs;
+    @FXML
+    MenuItem menuItemDeleteElements;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -76,7 +79,11 @@ public class MainController {
         buttonAddText.setOnAction(this::buttonAddTextOnActionHandler);
         buttonAddImage.setOnAction(this::buttonAddImageOnActionHandler);
         buttonAddCanvas.setOnAction(this::buttonAddCanvasOnActionHandler);
+        menuItemNewCanvas.setOnAction(this::menuItemNewCanvasOnActionHandler);
+        menuItemClearCanvas.setOnAction(this::menuItemClearCanvasOnActionHandler);
+        menuItemDeleteElements.setOnAction(this::menuItemDeleteElementsOnActionHandler);
     }
+
 
 
 
@@ -115,6 +122,42 @@ public class MainController {
         imageElem.IsSelected.set(true);
     }
     private void buttonAddCanvasOnActionHandler(ActionEvent actionEvent) {
+        createNewCanvas();
+    }
+
+    private void menuItemNewCanvasOnActionHandler(ActionEvent actionEvent) {
+        createNewCanvas();
+    }
+
+    private void menuItemClearCanvasOnActionHandler(ActionEvent actionEvent) {
+        if (mainCanvas != null){
+            mainCanvas.clearCanvas();
+        }
+    }
+    private void menuItemDeleteElementsOnActionHandler(ActionEvent actionEvent) {
+        if (mainCanvas != null){
+            mainCanvas.removeSelectedElements();
+        }
+    }
+
+
+    /////////////////////////////////////////////////////////////////////
+    // public methods
+    /////////////////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////////////////////
+    // private methods
+    /////////////////////////////////////////////////////////////////////
+    private void setToolsEnabled(boolean enabled){
+        buttonAddImage.setDisable(!enabled);
+        buttonAddText.setDisable(!enabled);
+        buttonAddRectangle.setDisable(!enabled);
+        buttonAddCircle.setDisable(!enabled);
+    }
+
+    private void createNewCanvas(){
+
         CreateCanvasController createCanvasController = new CreateCanvasController();
         DialogPane dialogPane;
         try {
@@ -143,20 +186,5 @@ public class MainController {
             mainCanvas = new Canvas(paneCanvas, vBoxProperties, w, h);
             setToolsEnabled(true);
         }
-    }
-
-    /////////////////////////////////////////////////////////////////////
-    // public methods
-    /////////////////////////////////////////////////////////////////////
-
-
-    /////////////////////////////////////////////////////////////////////
-    // private methods
-    /////////////////////////////////////////////////////////////////////
-    private void setToolsEnabled(boolean enabled){
-        buttonAddImage.setDisable(!enabled);
-        buttonAddText.setDisable(!enabled);
-        buttonAddRectangle.setDisable(!enabled);
-        buttonAddCircle.setDisable(!enabled);
     }
 }

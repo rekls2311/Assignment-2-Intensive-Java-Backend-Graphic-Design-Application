@@ -90,13 +90,9 @@ public abstract class CanvasElement implements ICanvasTransformable {
     /////////////////////////////////////////////////////////////////////
     // Public methods
     /////////////////////////////////////////////////////////////////////
-    public Group getGroup()
-    {
-        return group;
-    }
 
     // Occur when user click to select the element
-    public void select() {
+    protected void select() {
         if (!propertyPane.getChildren().contains(fxmlProperties)) {
             propertyPane.getChildren().add(fxmlProperties);
         }
@@ -105,7 +101,7 @@ public abstract class CanvasElement implements ICanvasTransformable {
             transformController.startTransform();
     }
 
-    public void deselect() {
+    protected void deselect() {
         propertyPane.getChildren().remove(fxmlProperties);
 
         if (transformController != null)

@@ -6,18 +6,35 @@
 
 <SplitPane dividerPositions="0.06963788300835655, 0.8816155988857939" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.furthurprogramming.assignment2.controller.MainController">
    <items>
-      <AnchorPane maxHeight="-Infinity" prefHeight="40.0" prefWidth="967.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane maxHeight="-Infinity" style="-fx-background-color: rgb(220, 220, 220);">
          <children>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="122.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="805.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="122.0" AnchorPane.topAnchor="0.0">
                <image>
                   <Image url="@../media/default_profile.png" />
                </image>
             </ImageView>
-            <ToolBar prefHeight="40.0" prefWidth="380.0" style="-fx-background-color: rgba(0,0,0,0);">
-              <items>
-                <Button mnemonicParsing="false" text="Button" />
-              </items>
-            </ToolBar>
+            <MenuBar prefHeight="24.0" prefWidth="152.0" style="-fx-background-color: #00000000;">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menuItemNewCanvas" mnemonicParsing="false" text="New canvas" />
+                        <MenuItem fx:id="menuItemClearCanvas" mnemonicParsing="false" text="Clear canvas" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuItemSaveAs" mnemonicParsing="false" text="Save as ..." />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="menuItemDeleteElements" mnemonicParsing="false" text="Delete Element" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
          </children>
       </AnchorPane>
       <SplitPane dividerPositions="0.08897243107769423, 0.8082706766917294" prefHeight="160.0" prefWidth="200.0">
