@@ -5,6 +5,7 @@ import com.furthurprogramming.assignment2.service.element.CanvasElement;
 import com.furthurprogramming.assignment2.service.element.CanvasRectangle;
 import javafx.beans.Observable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -82,28 +83,22 @@ public class Canvas {
 
     void createHandlers()
     {
-        canvasPane.setOnMousePressed(this::canvasPaneOnMousePressedHandler);
+
     }
 
     /////////////////////////////////////////////////////////////////////
     // Event handler
     ////////////////////////////////////////////////////////////////////
 
-    private void canvasPaneOnMousePressedHandler(MouseEvent e)
-    {
-//        for(var element : elementList){
-//            if (!element.containsPoint(new Point2D(
-//                    e.getX() - element.getGroup().getLayoutX(),
-//                    e.getY() - element.getGroup().getLayoutY())))
-//                element.IsSelected.setValue(false);
-//        }
-    }
 
     private void elementIsSelectedListener(Observable observable, boolean oldVal, boolean newVal) {
         if (newVal) {
             for (var element : elementList) {
-                if (observable != element.IsSelected)
+                if (observable != element.IsSelected){
                     element.IsSelected.setValue(false);
+                } else if (element != background){
+                    element.getMainNode().toFront();
+                }
             }
         }
     }

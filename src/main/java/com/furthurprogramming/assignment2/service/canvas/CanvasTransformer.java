@@ -5,7 +5,9 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Affine;
 
@@ -22,6 +24,8 @@ public class CanvasTransformer extends AnimationTimer {
 
     // rotate, topleft, topright, botright, botleft
     List<Circle> controlPoints;
+    List<Line> controlEdges;
+
     Group controlGroup;
     List<CanvasDragger> dragControllers;
     ICanvasTransformable transformable;
@@ -40,6 +44,7 @@ public class CanvasTransformer extends AnimationTimer {
         controlGroup = new Group();
 
         controlPoints = new ArrayList<>(5);
+        controlEdges = new ArrayList<>(4);
         dragControllers = new ArrayList<>(5);
 
         groupDragController = new CanvasDragger(transformable.getMainNode());
@@ -47,7 +52,9 @@ public class CanvasTransformer extends AnimationTimer {
         groupDragController.disable();
 
         for(int i = 0; i < 5; ++i) {
-            var newControl = new Circle(10);
+            var newControl = new Circle(6);
+
+            newControl.setFill(Color.BLUE);
 
             controlGroup.getChildren().add(newControl);
             controlPoints.add(newControl);
@@ -106,8 +113,8 @@ public class CanvasTransformer extends AnimationTimer {
         controlPoints.get(BOTLEFT ).setLayoutY(h);
 
         for(var controlPoint : controlPoints){
-            controlPoint.setLayoutX(controlPoint.getLayoutX() + bounds.getX());
-            controlPoint.setLayoutY(controlPoint.getLayoutY() + bounds.getY());
+            controlPoint.setLayoutX(controlPoint.getLayoutX() + bounds.getMinX());
+            controlPoint.setLayoutY(controlPoint.getLayoutY() + bounds.getMinY());
         }
 
     }
@@ -115,8 +122,8 @@ public class CanvasTransformer extends AnimationTimer {
     private void controlPointRotateOnMouseDraggedHandler(MouseEvent mouseEvent){
         var newBounds = transformable.getBoundingRectangle();
 
-        double cx = newBounds.getX() + newBounds.getWidth() / 2;
-        double cy = newBounds.getY() + newBounds.getHeight() / 2;
+        double cx = newBounds.getMinX() + newBounds.getWidth() / 2;
+        double cy = newBounds.getMinY() + newBounds.getHeight() / 2;
 
         double x = controlPoints.get(ROTATE).getLayoutX() - cx;
         double y = controlPoints.get(ROTATE).getLayoutY() - cy;
@@ -127,46 +134,54 @@ public class CanvasTransformer extends AnimationTimer {
 
         double angle = Math.toDegrees(Math.atan(-x / y));
 
-        newBounds.setRotate(angle);
+//        newBounds.setRotate(angle);
 
         //transformable.updateTransform(newBounds);
         //refreshControlPoints();
     }
     private void controlPointTopLeftOnMouseDraggedHandler(MouseEvent mouseEvent){
-        var newBounds = transformable.getBoundingRectangle();
+        var bounds = transformable.getBoundingRectangle();
 
-        newBounds.setWidth(Math.abs(controlPoints.get(TOPRIGHT).getLayoutX() - controlPoints.get(TOPLEFT).getLayoutX()));
-        newBounds.setHeight(Math.abs(controlPoints.get(TOPLEFT).getLayoutY() - controlPoints.get(BOTLEFT).getLayoutY()));
-        newBounds.setY(controlPoints.get(TOPLEFT).getLayoutY());
-        newBounds.setX(controlPoints.get(TOPLEFT).getLayoutX());
+        var w = Math.abs(controlPoints.get(TOPRIGHT).getLayoutX() - controlPoints.get(TOPLEFT).getLayoutX());
+        var h = Math.abs(controlPoints.get(TOPLEFT).getLayoutY() - controlPoints.get(BOTLEFT).getLayoutY());
+        var y = controlPoints.get(TOPLEFT).getLayoutY();
+        var x = controlPoints.get(TOPLEFT).getLayoutX();
 
-        transformable.updateTransform(newBounds);
+        transformable.updateTransform(x, y, w, h);
     }
+
     private void controlPointTopRightOnMouseDraggedHandler(MouseEvent mouseEvent){
-        var newBounds = transformable.getBoundingRectangle();
+        var bounds = transformable.getBoundingRectangle();
 
-        newBounds.setWidth(Math.abs(controlPoints.get(TOPRIGHT).getLayoutX() - controlPoints.get(TOPLEFT).getLayoutX()));
-        newBounds.setHeight(Math.abs(controlPoints.get(TOPRIGHT).getLayoutY() - controlPoints.get(BOTRIGHT).getLayoutY()));
-        newBounds.setY(controlPoints.get(TOPRIGHT).getLayoutY());
+        var w = Math.abs(controlPoints.get(TOPRIGHT).getLayoutX() - controlPoints.get(TOPLEFT).getLayoutX());
+        var h = Math.abs(controlPoints.get(TOPRIGHT).getLayoutY() - controlPoints.get(BOTRIGHT).getLayoutY());
+        var y = controlPoints.get(TOPRIGHT).getLayoutY();
+        var x = bounds.getMinX();
 
-        transformable.updateTransform(newBounds);
+        transformable.updateTransform(x, y, w, h);
     }
+
     private void controlPointBotRightOnMouseDraggedHandler(MouseEvent mouseEvent){
-        var newBounds = transformable.getBoundingRectangle();
+        var bounds = transformable.getBoundingRectangle();
 
-        newBounds.setHeight(Math.abs(controlPoints.get(BOTRIGHT).getLayoutY() - controlPoints.get(TOPRIGHT).getLayoutY()));
-        newBounds.setWidth(Math.abs(controlPoints.get(BOTRIGHT).getLayoutX() - controlPoints.get(BOTLEFT).getLayoutX()));
 
-        transformable.updateTransform(newBounds);
+        var x = bounds.getMinX();
+        var y = bounds.getMinY();
+        var h = Math.abs(controlPoints.get(BOTRIGHT).getLayoutY() - controlPoints.get(TOPRIGHT).getLayoutY());
+        var w = Math.abs(controlPoints.get(BOTRIGHT).getLayoutX() - controlPoints.get(BOTLEFT).getLayoutX());
+
+        transformable.updateTransform(x, y, w, h);
     }
+
     private void controlPointBotLeftOnMouseDraggedHandler(MouseEvent mouseEvent){
-        var newBounds = transformable.getBoundingRectangle();
+        var bounds = transformable.getBoundingRectangle();
 
-        newBounds.setWidth(Math.abs(controlPoints.get(BOTLEFT).getLayoutX() - controlPoints.get(BOTRIGHT).getLayoutX()));
-        newBounds.setHeight(Math.abs(controlPoints.get(BOTLEFT).getLayoutY() - controlPoints.get(TOPLEFT).getLayoutY()));
-        newBounds.setX(controlPoints.get(BOTLEFT).getLayoutX());
+        var w = (Math.abs(controlPoints.get(BOTLEFT).getLayoutX() - controlPoints.get(BOTRIGHT).getLayoutX()));
+        var h = (Math.abs(controlPoints.get(BOTLEFT).getLayoutY() - controlPoints.get(TOPLEFT).getLayoutY()));
+        var x = (controlPoints.get(BOTLEFT).getLayoutX());
+        var y= bounds.getMinY();
 
-        transformable.updateTransform(newBounds);
+        transformable.updateTransform(x, y, w, h);
     }
 
     private void mainNodeOnDraggedHandler(DragEvent dragEvent){

@@ -1,6 +1,8 @@
 package com.furthurprogramming.assignment2;
 
+import com.furthurprogramming.assignment2.controller.MainController;
 import com.furthurprogramming.assignment2.model.AccountDAO;
+import com.furthurprogramming.assignment2.model.UserDAO;
 import com.furthurprogramming.assignment2.util.DBUtil;
 
 import com.furthurprogramming.assignment2.util.JavaFXUtil;
@@ -24,10 +26,12 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         Main.stage = stage;
 
-        Parent fxml = JavaFXUtil.loadFXML("main");
+        Parent fxml = JavaFXUtil.loadFXML("login");
         scene = new Scene(fxml);
         stage.setScene(scene);
         stage.show();
+
+        logIn("nguyen", "123");
     }
 
     public static Stage getStage() {
@@ -38,17 +42,26 @@ public class Main extends Application {
         return scene;
     }
 
-    public static void setRoot(String fxml) throws IOException {
+    public static Parent setRoot(String fxml) throws IOException {
         var newFxml = JavaFXUtil.loadFXML(fxml);
         scene.setRoot(newFxml);
         stage.sizeToScene();
+        return newFxml;
+    }
+
+    public static Parent setRoot(String fxml, Object controller) throws IOException {
+        var newFxml = JavaFXUtil.loadFXML(fxml, controller);
+        scene.setRoot(newFxml);
+        stage.sizeToScene();
+        return newFxml;
     }
 
     public static boolean logIn(String un, String password)
     {
         if (checkAuthentication(un, password)) {
             try {
-                setRoot("main");
+                MainController mainController = new MainController(un);
+                setRoot("main", mainController);
                 return true;
             } catch (IOException e) {
                 e.printStackTrace();

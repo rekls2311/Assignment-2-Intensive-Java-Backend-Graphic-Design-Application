@@ -6,6 +6,9 @@ import com.furthurprogramming.assignment2.service.canvas.ICanvasTransformable;
 import com.furthurprogramming.assignment2.util.JavaFXUtil;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.event.Event;
+import javafx.geometry.BoundingBox;
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -50,7 +53,9 @@ public abstract class CanvasElement implements ICanvasTransformable {
 
         this.transformController = new CanvasTransformer(this);
         IsTransformable = true;
-        this.node.setOnMousePressed(mouseEvent -> {IsSelected.set(true);});
+        this.node.setOnMousePressed(mouseEvent -> {
+            IsSelected.set(true);
+        });
     }
 
     public void setPropertyPane(@NotNull Pane propertyPane){
@@ -111,10 +116,10 @@ public abstract class CanvasElement implements ICanvasTransformable {
     public Group getParentGroup(){
         return group;
     }
-    public Rectangle getBoundingRectangle() {
-        return new Rectangle();
+    public Bounds getBoundingRectangle() {
+        return getMainNode().getLayoutBounds();
     }
-    public void updateTransform(Rectangle bounds) {
+    public void updateTransform(double x, double y, double width, double height) {
 
     }
 

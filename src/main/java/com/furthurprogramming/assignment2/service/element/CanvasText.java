@@ -2,17 +2,9 @@ package com.furthurprogramming.assignment2.service.element;
 
 import com.furthurprogramming.assignment2.controller.element.CanvasTextPropertyController;
 import com.furthurprogramming.assignment2.util.JavaFXUtil;
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.scene.Parent;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -71,15 +63,19 @@ public class CanvasText extends CanvasShape {
         setFont(family, -1, null, null);
     }
 
-    public void setSize(double size){
+    public void setFontSize(double size){
         setFont(null, size, null, null);
     }
 
-    public void setWeight(String weight){
+    public double getFontSize(){
+        return text.getFont().getSize();
+    }
+
+    public void setFontWeight(String weight){
         setFont(null, -1, FontWeight.findByName(weight), null);
     }
 
-    public void setPosture(String posture){
+    public void setFontPosture(String posture){
         setFont(null, -1, null, FontPosture.findByName(posture));
     }
 
@@ -179,6 +175,19 @@ public class CanvasText extends CanvasShape {
 
     @Override
     public void setBackgroundColor(Color color) {
-        text.setStyle("-fx-control-inner-background: #" + color.toString().substring(2));
+        text.setStyle("-fx-background-color: red");
+    }
+
+    @Override
+    public void updateTransform(double x, double y, double width, double height) {
+        // Pt / Px = 0.75 (Height)
+        double dHeight = height - getFontSize() / 0.75;
+
+        var oldX = getLayoutX();
+        var oldY = getLayoutY();
+        setFontSize(height * 0.75);
+        // @TODO: Fix the position of the text
+        shape.setLayoutX(oldX);
+        shape.setLayoutY(oldY);
     }
 }

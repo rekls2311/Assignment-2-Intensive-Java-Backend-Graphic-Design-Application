@@ -2,6 +2,7 @@ package com.furthurprogramming.assignment2.controller;
 
 import java.io.IOException;
 
+import com.furthurprogramming.assignment2.model.UserDAO;
 import com.furthurprogramming.assignment2.service.canvas.Canvas;
 import com.furthurprogramming.assignment2.service.element.CanvasCircle;
 import com.furthurprogramming.assignment2.service.element.CanvasImage;
@@ -47,12 +48,20 @@ public class MainController {
     MenuItem menuItemSaveAs;
     @FXML
     MenuItem menuItemDeleteElements;
+    @FXML
+    Button buttonLogout;
+    @FXML
+    Label labelUserFullName;
+    @FXML
+    Label labelTransformInfo;
 
 
     /////////////////////////////////////////////////////////////////////
     // Normal fields
     /////////////////////////////////////////////////////////////////////
     Canvas mainCanvas;
+
+    String userFullName;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -70,6 +79,10 @@ public class MainController {
 
         //mainCanvas.setBackgroundColor(Color.WHITE);
         createHandlers();
+
+        if (userFullName != null){
+            labelUserFullName.setText(userFullName);
+        }
     }
 
     private void createHandlers()
@@ -82,18 +95,34 @@ public class MainController {
         menuItemNewCanvas.setOnAction(this::menuItemNewCanvasOnActionHandler);
         menuItemClearCanvas.setOnAction(this::menuItemClearCanvasOnActionHandler);
         menuItemDeleteElements.setOnAction(this::menuItemDeleteElementsOnActionHandler);
+        buttonLogout.setOnAction(this::buttonLogoutOnActionHandler);
     }
 
 
-
-
-    public MainController()
+    public MainController(String username)
     {
+        var user = UserDAO.searchUser(username);
+
+        if (user != null){
+            userFullName = user.getFirstName() + " " + user.getLastName();
+        }
+
     }
 
     /////////////////////////////////////////////////////////////////////
     // Event handler
     ////////////////////////////////////////////////////////////////////
+
+
+    private void buttonLogoutOnActionHandler(ActionEvent actionEvent) {
+        try {
+            Main.setRoot("login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void buttonAddCircleOnActionHandler(ActionEvent e){
         var circleElem = new CanvasCircle(100);
         mainCanvas.addElement(circleElem);

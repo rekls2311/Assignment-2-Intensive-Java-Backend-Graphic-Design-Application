@@ -3,6 +3,7 @@ package com.furthurprogramming.assignment2.service.element;
 import com.furthurprogramming.assignment2.controller.element.CanvasImagePropertyController;
 import com.furthurprogramming.assignment2.controller.element.CanvasShapePropertyController;
 import com.furthurprogramming.assignment2.controller.element.CanvasTextPropertyController;
+import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,28 +27,15 @@ public class CanvasImage extends CanvasElement{
         imView.setImage(img);
     }
 
-    public Rectangle getBoundingRectangle() {
-        Rectangle rect = new Rectangle();
-        var img = (ImageView)getMainNode();
-        var bounds = img.getBoundsInLocal();
-
-
-        rect.setX(bounds.getMinX());
-        rect.setY(bounds.getMinY());
-        rect.setWidth(bounds.getWidth());
-        rect.setHeight(bounds.getHeight());
-
-        return rect;
-    }
-
     @Override
-    public void updateTransform(Rectangle bounds) {
+    public void updateTransform(double x, double y, double width, double height) {
         var img = (ImageView)getMainNode();
 
-        img.setX(bounds.getX());
-        img.setY(bounds.getY());
-        img.setFitWidth(bounds.getWidth());
-        img.setFitHeight(bounds.getHeight());
-        img.setRotate(bounds.getRotate());
+        System.out.println("%.2f, %.2f, %.2f, %.2f".formatted(x, y, width, height));
+
+        img.setX(x);
+        img.setY(y);
+        img.setFitWidth(width);
+        img.setFitHeight(height);
     }
 }

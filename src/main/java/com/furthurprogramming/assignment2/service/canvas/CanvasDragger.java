@@ -30,6 +30,8 @@ public class CanvasDragger {
 
     MouseButton dragButton;
 
+    Boolean enabled = false;
+
     public CanvasDragger(Node target, MouseButton dragButton) {
         this.target = target;
         this.dragButton = dragButton;
@@ -37,6 +39,9 @@ public class CanvasDragger {
         this.mousePrevious = Point2D.ZERO;
 
         createHandlers();
+
+        target.addEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
+        target.addEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
 
         enable();
     }
@@ -46,23 +51,24 @@ public class CanvasDragger {
     }
 
     public void enable(){
-        target.addEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
-        target.addEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
+        enabled = true;
     }
 
     public void disable(){
-        target.removeEventFilter(MouseEvent.MOUSE_PRESSED, setAnchor);
-        target.removeEventFilter(MouseEvent.MOUSE_DRAGGED, updatePositionOnDrag);
+        enabled = false;
     }
 
     private void createHandlers() {
+
         setAnchor = event -> {
             if (event.getButton().equals(dragButton)) {
                 mousePrevious = new Point2D(event.getSceneX(), event.getSceneY());
+                System.out.println(" clicked");
             }
         };
+
         updatePositionOnDrag = event -> {
-            if (event.getButton().equals(dragButton)) {
+            if (enabled && event.getButton().equals(dragButton)) {
                 double dx = event.getSceneX() - mousePrevious.getX();
                 double dy = event.getSceneY() - mousePrevious.getY();
 

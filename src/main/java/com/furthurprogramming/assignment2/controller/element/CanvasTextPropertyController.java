@@ -10,8 +10,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 
 import java.util.List;
 
@@ -97,15 +95,15 @@ public class CanvasTextPropertyController {
     }
 
     void spinnerFontSizeValueListener(Observable observable, double oldValue, double newValue) {
-        canvasText.setSize(newValue);
+        canvasText.setFontSize(newValue);
     }
 
     void comboBoxWeightValueListener(Observable observable, String oldValue, String newValue){
-        canvasText.setWeight(newValue);
+        canvasText.setFontWeight(newValue);
     }
 
     void comboBoxPostureValueListener(Observable observable,String oldValue, String newValue){
-        canvasText.setPosture(newValue);
+        canvasText.setFontPosture(newValue);
     }
 
     void comboBoxWeightOnShowingHandler(Event ev){
