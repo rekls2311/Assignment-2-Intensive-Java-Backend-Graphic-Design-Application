@@ -46,6 +46,13 @@ public class ImageUtil {
         return convertToFxImage(bImage2);
     }
 
+    public static Image ReadImageFromFile(String path) throws IOException {
+
+        return ByteArrayToImage(ImageToByteArray(path));
+
+
+    }
+
     public static File chooseImageFile() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");

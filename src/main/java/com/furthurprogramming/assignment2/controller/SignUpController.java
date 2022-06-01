@@ -83,7 +83,7 @@ public class SignUpController {
         }
     }
 
-    private void buttonOnImageActionHandler(){
+    private void buttonOnImageActionHandler() {
         var file = ImageUtil.chooseImageFile();
 
         if (file == null)
@@ -91,7 +91,12 @@ public class SignUpController {
 
         profileImagePath = file.getAbsolutePath();
 
-        Image img = new Image(file.getAbsolutePath());
+        Image img = null;
+        try {
+            img = ImageUtil.ReadImageFromFile(profileImagePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         setImageviewProfileimage(img);
     }

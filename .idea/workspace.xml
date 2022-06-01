@@ -5,17 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46480ff4-1397-4700-927d-1184f26d94e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test/com/furthurprogramming/assignment2/model/AccountDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/com/furthurprogramming/assignment2/model/UserDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_ea_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_ea_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_ea_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_ea_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/model/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/database/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/null" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/database/database.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/media/default_profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/createcanvas.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/element_property/image_property.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/element_property/shape_property.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/element_property/text_property.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/furthurprogramming/assignment2/views/signup.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +45,18 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/util/DBUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/furthurprogramming/assignment2/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="28HNS1u9cNR7Lbgn1QfOtwFKvoL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -51,27 +66,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "D:/Teaching/Long/FurthurProgramming.Assignment2/src/main/resources/com/furthurprogramming/assignment2/views/element_property",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.37931034",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Teaching\Long\FurthurProgramming.Assignment2\src\main\resources\com\furthurprogramming\assignment2\views\element_property" />
@@ -87,11 +88,26 @@
       <recent name="com.furthurprogramming.assignment2.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDAOTest.searchUser">
+  <component name="RunManager" selected="Application.Assignment2">
     <configuration name="Assignment2" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-18.0.1" />
       <option name="MAIN_CLASS_NAME" value="com.furthurprogramming.assignment2.Main" />
       <module name="Assignment2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.furthurprogramming.assignment2.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.furthurprogramming.assignment2.model" />
+      <option name="MAIN_CLASS_NAME" value="com.furthurprogramming.assignment2.model.AccountDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,9 +161,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDAOTest" />
+        <item itemvalue="JUnit.AccountDAOTest" />
         <item itemvalue="JUnit.UserDAOTest.searchUser" />
         <item itemvalue="JUnit.AccountDAOTest.TestAccountDAO" />
-        <item itemvalue="JUnit.UserDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -159,8 +176,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650869550892</updated>
+      <workItem from="1654089931259" duration="1063000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
