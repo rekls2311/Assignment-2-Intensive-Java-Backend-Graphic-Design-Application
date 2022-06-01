@@ -154,9 +154,14 @@ public class MainController {
             return;
         }
 
-        var imageElem = new CanvasImage(new Image(imgFile.getAbsolutePath()));
-        mainCanvas.addElement(imageElem);
-        imageElem.IsSelected.set(true);
+        CanvasImage imageElem = null;
+        try {
+            imageElem = new CanvasImage(ImageUtil.ReadImageFromFile(imgFile.getAbsolutePath()));
+            mainCanvas.addElement(imageElem);
+            imageElem.IsSelected.set(true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void buttonAddCanvasOnActionHandler(ActionEvent actionEvent) {
         createNewCanvas();
