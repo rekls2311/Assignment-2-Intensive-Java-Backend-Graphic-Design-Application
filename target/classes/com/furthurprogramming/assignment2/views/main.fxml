@@ -8,7 +8,7 @@
    <items>
       <AnchorPane maxHeight="-Infinity" style="-fx-background-color: rgb(220, 220, 220);">
          <children>
-            <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="545.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="223.0">
+            <ImageView fx:id="imageViewUserImage" fitHeight="30.0" fitWidth="40.0" layoutX="545.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="223.0">
                <image>
                   <Image url="@../media/default_profile.png" />
                </image>

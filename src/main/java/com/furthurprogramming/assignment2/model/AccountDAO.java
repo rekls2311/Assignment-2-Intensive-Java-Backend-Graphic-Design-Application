@@ -47,4 +47,9 @@ public class AccountDAO {
     {
         return DBUtil.update("INSERT INTO accounts(username,password) VALUES('%s','%s')".formatted(username, password));
     }
+
+    public static boolean deleteAllAccounts()
+    {
+        return DBUtil.update("DELETE FROM accounts");
+    }
 }

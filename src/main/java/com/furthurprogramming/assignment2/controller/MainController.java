@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import com.furthurprogramming.assignment2.Main;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -54,6 +55,8 @@ public class MainController {
     Label labelUserFullName;
     @FXML
     Label labelTransformInfo;
+    @FXML
+    ImageView imageViewUserImage;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -62,6 +65,7 @@ public class MainController {
     Canvas mainCanvas;
 
     String userFullName;
+    Image userImage;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -82,6 +86,9 @@ public class MainController {
 
         if (userFullName != null){
             labelUserFullName.setText(userFullName);
+        }
+        if (userImage != null){
+            imageViewUserImage.setImage(userImage);
         }
     }
 
@@ -105,6 +112,7 @@ public class MainController {
 
         if (user != null){
             userFullName = user.getFirstName() + " " + user.getLastName();
+            userImage = user.getProfilePicture();
         }
 
     }

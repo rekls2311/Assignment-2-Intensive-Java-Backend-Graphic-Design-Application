@@ -68,13 +68,17 @@ public class UserDAO {
 
     public static boolean createUser(String username, String password, String firstName, String lastName)
     {
-        if (!AccountDAO.createAccount(username, password)) {
-            return false;
+        if (AccountDAO.searchAccount(username) == null){
+            if (!AccountDAO.createAccount(username, password)) {
+                return false;
+            }
         }
 
         return DBUtil.update("INSERT INTO users(firstname,lastname,username) VALUES('%s','%s','%s')"
                 .formatted(firstName, lastName, username));
     }
 
-
+    public static boolean deleteAllUsers(){
+        return DBUtil.update("DELETE FROM users");
+    }
 }

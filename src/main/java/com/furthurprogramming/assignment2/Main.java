@@ -31,7 +31,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-        logIn("nguyen", "123");
+        //logIn("nguyen", "123");
     }
 
     public static Stage getStage() {
