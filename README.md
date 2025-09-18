@@ -50,7 +50,7 @@ This section walks through the application's flow from start to finish.
 
 After running the application, the first thing you'll see is the Login screen. From here, you can log in with an existing account or create a new one.
 
-![Login Screen](assests/login_screen.png)
+![Login Screen](https://github.com/rekls2311/Assignment-2-Intensive-Java-Backend-Graphic-Design-Application/blob/e691d7f4ad660be724981782adde08ea01baa4b4/assests/login%20screen.png)
 
 
 #### 2. Sign Up for a New Account
