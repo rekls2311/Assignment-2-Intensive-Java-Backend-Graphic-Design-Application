@@ -40,7 +40,52 @@ This project uses **Maven** for dependency management and building. Follow these
     * This command will automatically download all dependencies and launch the application's GUI.
 
 ---
+---
 
+### User Guide with Screenshots
+
+This section walks through the application's flow from start to finish.
+
+#### 1. Login GUI
+
+After running the application, the first thing you'll see is the Login screen. From here, you can log in with an existing account or create a new one.
+
+![Login Screen](assets/login_screen.png)
+
+*To display your image, upload your screenshot to your GitHub repository (e.g., in a folder named `assets`), and replace `assets/login_screen.png` with the correct path to your file.*
+
+#### 2. Sign Up for a New Account
+
+To create a new account, click the **"Sign Up"** button on the Login screen. You'll be prompted to enter a username, password, first name, and last name. If a username already exists, the application will prevent you from creating a duplicate account. You can also personalize your account by adding a profile picture.
+
+![Sign Up Screen](assets/signup_screen.png)
+
+#### 3. Main Application Canvas
+
+Once logged in, you can start creating! The main GUI displays your profile picture and name at the top, a clear indicator of the "smart" user experience.
+
+![Main Canvas Screen](assets/main_canvas_screen.png)
+
+*You can then play around with it. By creating a new canvas up to your size, add in text, circles, rectangles, and your images.*
+
+#### 4. Manipulating Elements
+
+The application allows you to add various elements to your canvas, each with its own customizable properties.
+
+* **Create a new canvas**: Click on **File** then **New Canvas** to specify your desired width and height.
+* **Add elements**: Use the buttons on the left sidebar to add **Text**, **Circles**, **Rectangles**, or **Images**.
+* **Edit properties**: Select an element on the canvas to open its property panel on the right, where you can change its color, font, size, and more.
+* **Delete an element**: You can delete individual elements from the canvas as needed.
+
+![Adding Elements](assets/adding_elements.png)
+
+#### 5. Saving Your Work
+
+The application also provides a way to save your work. Press **File** then **Save As** to save your completed design.
+
+Enjoy!
+
+---
 ### File Structure
 
 This section explains the purpose of the key directories and files in the project.
