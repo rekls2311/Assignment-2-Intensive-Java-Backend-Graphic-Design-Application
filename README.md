@@ -57,13 +57,13 @@ After running the application, the first thing you'll see is the Login screen. F
 
 To create a new account, click the **"Sign Up"** button on the Login screen. You'll be prompted to enter a username, password, first name, and last name. If a username already exists, the application will prevent you from creating a duplicate account. You can also personalize your account by adding a profile picture.
 
-![Sign Up Screen](assests/signup_screen.png)
+![Sign Up Screen]([assests/signup_screen.png](https://github.com/rekls2311/Assignment-2-Intensive-Java-Backend-Graphic-Design-Application/blob/d52ebb74754734de1ea670b9480041942ead9bf1/assests/signup%20screen.png))
 
 #### 3. Main Application Canvas
 
 Once logged in, you can start creating! The main GUI displays your profile picture and name at the top, a clear indicator of the "smart" user experience.
 
-![Main Canvas Screen](assests/main_canvas_screen.png)
+![Main Canvas Screen]([assests/main_canvas_screen.png](https://github.com/rekls2311/Assignment-2-Intensive-Java-Backend-Graphic-Design-Application/blob/d52ebb74754734de1ea670b9480041942ead9bf1/assests/main%20canvas%20screen.png))
 
 *You can then play around with it. By creating a new canvas up to your size, add in text, circles, rectangles, and your images.*
 
@@ -76,7 +76,7 @@ The application allows you to add various elements to your canvas, each with its
 * **Edit properties**: Select an element on the canvas to open its property panel on the right, where you can change its color, font, size, and more.
 * **Delete an element**: You can delete individual elements from the canvas as needed.
 
-![Adding Elements](assets/adding_elements.png)
+![Adding Elements](https://github.com/rekls2311/Assignment-2-Intensive-Java-Backend-Graphic-Design-Application/blob/d52ebb74754734de1ea670b9480041942ead9bf1/assests/adding%20elements.png)
 
 #### 5. Saving Your Work
 
