@@ -50,21 +50,20 @@ This section walks through the application's flow from start to finish.
 
 After running the application, the first thing you'll see is the Login screen. From here, you can log in with an existing account or create a new one.
 
-![Login Screen](assets/login_screen.png)
+![Login Screen](assests/login_screen.png)
 
-*To display your image, upload your screenshot to your GitHub repository (e.g., in a folder named `assets`), and replace `assets/login_screen.png` with the correct path to your file.*
 
 #### 2. Sign Up for a New Account
 
 To create a new account, click the **"Sign Up"** button on the Login screen. You'll be prompted to enter a username, password, first name, and last name. If a username already exists, the application will prevent you from creating a duplicate account. You can also personalize your account by adding a profile picture.
 
-![Sign Up Screen](assets/signup_screen.png)
+![Sign Up Screen](assests/signup_screen.png)
 
 #### 3. Main Application Canvas
 
 Once logged in, you can start creating! The main GUI displays your profile picture and name at the top, a clear indicator of the "smart" user experience.
 
-![Main Canvas Screen](assets/main_canvas_screen.png)
+![Main Canvas Screen](assests/main_canvas_screen.png)
 
 *You can then play around with it. By creating a new canvas up to your size, add in text, circles, rectangles, and your images.*
 
