@@ -44,3 +44,35 @@ This project uses **Maven** for dependency management and building. Follow these
 ### File Structure
 
 This section explains the purpose of the key directories and files in the project.
+
+#### Key Files Explained
+
+* `pom.xml`: The **Maven Project Object Model** file. It manages the project's dependencies (JavaFX, SQLite JDBC) and defines how the project is built and run.
+* `src/main/java/`: Contains all the application's Java source code.
+    * `Main.java`: The primary entry point for the application. It sets up the initial stage and scene and handles the launching of the application.
+    * `controller/`: This package follows the **Model-View-Controller (MVC)** design pattern. It contains the controller classes that handle user interaction and logic for each view (FXML file).
+        * `LoginController.java`: Manages the logic for the user login window.
+        * `SignUpController.java`: Manages the logic for creating a new user account.
+        * `CreateCanvasController.java`: Handles the logic for creating a new canvas with custom dimensions.
+        * `MainController.java`: The main controller that manages the drawing canvas and all the graphic design tools.
+        * `element/`: Contains specialized controllers for managing the properties of different canvas elements.
+            * `CanvasImagePropertyController.java`: Handles the properties of image elements.
+            * `CanvasShapePropertyController.java`: Manages properties for shapes like rectangles and circles.
+            * `CanvasTextPropertyController.java`: Manages the properties of text elements (font, color, size).
+    * `model/`: Contains classes that define the data models and interact with the database.
+        * `Account.java`: The data model for a user's login account, storing the username and password.
+        * `User.java`: The data model for a user's profile, including first name, last name, and profile picture.
+        * `AccountDAO.java`: The **Data Access Object** class responsible for all database operations related to user accounts, such as checking for existence and creating new accounts.
+    * `service/`: Holds the core logic for the graphic design functionality, such as the `Canvas` class and the different `CanvasElement` types (rectangle, text, circle).
+    * `util/`: Includes utility classes for common tasks like database connection (`DBUtil`) and loading FXML files (`JavaFXUtil`).
+* `src/main/resources/`: Contains non-Java files required by the application, such as FXML layout files and database files.
+* `COSC2391-Assignment-2-S1-2022.pdf`: The official assignment specification document.
+
+---
+
+### Technologies Used
+
+* **Java 18**: The primary programming language.
+* **JavaFX**: A software platform for creating and delivering desktop applications with a modern graphical user interface.
+* **Maven**: A build automation tool used to manage project dependencies and build process.
+* **SQLite**: A lightweight, file-based relational database used for storing user account data.
